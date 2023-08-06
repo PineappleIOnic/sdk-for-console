@@ -10,7 +10,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(): Promise<Models.HealthStatus>;
     /**
      * Get Antivirus
@@ -19,7 +19,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getAntivirus(): Promise<Models.HealthAntivirus>;
     /**
      * Get Cache
@@ -29,7 +29,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCache(): Promise<Models.HealthStatus>;
     /**
      * Get DB
@@ -38,7 +38,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDB(): Promise<Models.HealthStatus>;
     /**
      * Get Certificates Queue
@@ -49,7 +49,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueCertificates(): Promise<Models.HealthQueue>;
     /**
      * Get Functions Queue
@@ -57,7 +57,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueFunctions(): Promise<Models.HealthQueue>;
     /**
      * Get Logs Queue
@@ -67,7 +67,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueLogs(): Promise<Models.HealthQueue>;
     /**
      * Get Webhooks Queue
@@ -77,7 +77,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueWebhooks(): Promise<Models.HealthQueue>;
     /**
      * Get Local Storage
@@ -86,7 +86,7 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getStorageLocal(): Promise<Models.HealthStatus>;
     /**
      * Get Time
@@ -101,6 +101,6 @@ export declare class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getTime(): Promise<Models.HealthTime>;
 }

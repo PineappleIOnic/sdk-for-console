@@ -21,7 +21,7 @@ export declare class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getBrowser(code: string, width?: number, height?: number, quality?: number): URL;
     /**
      * Get Credit Card Icon
@@ -42,7 +42,7 @@ export declare class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getCreditCard(code: string, width?: number, height?: number, quality?: number): URL;
     /**
      * Get Favicon
@@ -54,7 +54,7 @@ export declare class Avatars extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFavicon(url: string): URL;
     /**
      * Get Country Flag
@@ -76,7 +76,7 @@ export declare class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFlag(code: string, width?: number, height?: number, quality?: number): URL;
     /**
      * Get Image from URL
@@ -97,7 +97,7 @@ export declare class Avatars extends Service {
      * @param {number} height
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getImage(url: string, width?: number, height?: number): URL;
     /**
      * Get User Initials
@@ -125,7 +125,7 @@ export declare class Avatars extends Service {
      * @param {string} background
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getInitials(name?: string, width?: number, height?: number, background?: string): URL;
     /**
      * Get QR Code
@@ -140,6 +140,6 @@ export declare class Avatars extends Service {
      * @param {boolean} download
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getQR(text: string, size?: number, margin?: number, download?: boolean): URL;
 }

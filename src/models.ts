@@ -338,6 +338,19 @@ export namespace Models {
         variables: Variable[];
     }
     /**
+     * Locale codes list
+     */
+    export type LocaleCodeList = {
+        /**
+         * Total number of localeCodes documents that matched your query.
+         */
+        total: number;
+        /**
+         * List of localeCodes.
+         */
+        localeCodes: LocaleCode[];
+    }
+    /**
      * Migrations List
      */
     export type MigrationList = {
@@ -383,6 +396,10 @@ export namespace Models {
          * Database update date in ISO 8601 format.
          */
         $updatedAt: string;
+        /**
+         * Database enabled.
+         */
+        enabled: boolean;
     }
     /**
      * Collection
@@ -459,6 +476,10 @@ export namespace Models {
          */
         status: string;
         /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
+        /**
          * Is attribute required?
          */
         required: boolean;
@@ -491,6 +512,10 @@ export namespace Models {
          * Attribute status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
         /**
          * Is attribute required?
          */
@@ -529,6 +554,10 @@ export namespace Models {
          */
         status: string;
         /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
+        /**
          * Is attribute required?
          */
         required: boolean;
@@ -566,6 +595,10 @@ export namespace Models {
          */
         status: string;
         /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
+        /**
          * Is attribute required?
          */
         required: boolean;
@@ -594,6 +627,10 @@ export namespace Models {
          * Attribute status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
         /**
          * Is attribute required?
          */
@@ -627,6 +664,10 @@ export namespace Models {
          * Attribute status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
         /**
          * Is attribute required?
          */
@@ -665,6 +706,10 @@ export namespace Models {
          */
         status: string;
         /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
+        /**
          * Is attribute required?
          */
         required: boolean;
@@ -697,6 +742,10 @@ export namespace Models {
          * Attribute status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
         /**
          * Is attribute required?
          */
@@ -731,6 +780,10 @@ export namespace Models {
          */
         status: string;
         /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
+        /**
          * Is attribute required?
          */
         required: boolean;
@@ -763,6 +816,10 @@ export namespace Models {
          * Attribute status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an attribute.
+         */
+        error: string;
         /**
          * Is attribute required?
          */
@@ -812,6 +869,10 @@ export namespace Models {
          * Index status. Possible values: `available`, `processing`, `deleting`, `stuck`, or `failed`
          */
         status: string;
+        /**
+         * Error message. Displays error generated on failure of creating or deleting an index.
+         */
+        error: string;
         /**
          * Index attributes.
          */
@@ -981,6 +1042,10 @@ export namespace Models {
          */
         status: boolean;
         /**
+         * Labels for the user.
+         */
+        labels: string[];
+        /**
          * Password update time in ISO 8601 format.
          */
         passwordUpdate: string;
@@ -1004,6 +1069,10 @@ export namespace Models {
          * User preferences as a key-value object
          */
         prefs: Preferences;
+        /**
+         * Most recent access date in ISO 8601 format. This attribute is only updated again after 24 hours.
+         */
+        accessedAt: string;
     }
     /**
      * AlgoMD5
@@ -1285,6 +1354,19 @@ export namespace Models {
          * Currency code in [ISO 4217-1](http://en.wikipedia.org/wiki/ISO_4217) three-character format
          */
         currency: string;
+    }
+    /**
+     * LocaleCode
+     */
+    export type LocaleCode = {
+        /**
+         * Locale codes in [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+         */
+        code: string;
+        /**
+         * Locale name
+         */
+        name: string;
     }
     /**
      * File
@@ -1775,6 +1857,34 @@ export namespace Models {
          */
         domains: Domain[];
         /**
+         * Status for custom SMTP
+         */
+        smtpEnabled: boolean;
+        /**
+         * SMTP sender email
+         */
+        smtpSender: string;
+        /**
+         * SMTP server host name
+         */
+        smtpHost: string;
+        /**
+         * SMTP server port
+         */
+        smtpPort: number;
+        /**
+         * SMTP server username
+         */
+        smtpUsername: string;
+        /**
+         * SMTP server password
+         */
+        smtpPassword: string;
+        /**
+         * SMTP server secure protocol
+         */
+        smtpSecure: string;
+        /**
          * Email/Password auth method status
          */
         authEmailPassword: boolean;
@@ -1921,7 +2031,7 @@ export namespace Models {
          */
         secret: string;
         /**
-         * Most recent access date in ISO 8601 format.
+         * Most recent access date in ISO 8601 format. This attribute is only updated again after 24 hours.
          */
         accessedAt: string;
         /**
@@ -1970,6 +2080,10 @@ export namespace Models {
      * Provider
      */
     export type Provider = {
+        /**
+         * Provider.
+         */
+        key: string;
         /**
          * Provider name.
          */
@@ -2574,6 +2688,56 @@ export namespace Models {
          * Aggregated stats for number of buckets.
          */
         buckets: Metric[];
+    }
+    /**
+     * SmsTemplate
+     */
+    export type SmsTemplate = {
+        /**
+         * Template type
+         */
+        type: string;
+        /**
+         * Template locale
+         */
+        locale: string;
+        /**
+         * Template message
+         */
+        message: string;
+    }
+    /**
+     * EmailTemplate
+     */
+    export type EmailTemplate = {
+        /**
+         * Template type
+         */
+        type: string;
+        /**
+         * Template locale
+         */
+        locale: string;
+        /**
+         * Template message
+         */
+        message: string;
+        /**
+         * Name of the sender
+         */
+        senderName: string;
+        /**
+         * Email of the sender
+         */
+        senderEmail: string;
+        /**
+         * Reply to email address
+         */
+        replyTo: string;
+        /**
+         * Email subject
+         */
+        subject: string;
     }
     /**
      * Console Variables

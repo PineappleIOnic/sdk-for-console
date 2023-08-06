@@ -10,7 +10,7 @@ export declare class Graphql extends Service {
      * @param {object} query
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     query(query: object): Promise<{}>;
     /**
      * GraphQL Endpoint
@@ -20,6 +20,6 @@ export declare class Graphql extends Service {
      * @param {object} query
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     mutation(query: object): Promise<{}>;
 }

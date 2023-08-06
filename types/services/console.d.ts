@@ -10,6 +10,6 @@ export declare class Console extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     variables(): Promise<Models.ConsoleVariables>;
 }

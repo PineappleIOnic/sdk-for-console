@@ -14,7 +14,7 @@ export declare class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries?: string[], search?: string): Promise<Models.FunctionList>;
     /**
      * Create Function
@@ -33,7 +33,7 @@ export declare class Functions extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(functionId: string, name: string, runtime: string, execute?: string[], events?: string[], schedule?: string, timeout?: number, enabled?: boolean): Promise<Models.Function>;
     /**
      * List runtimes
@@ -42,7 +42,7 @@ export declare class Functions extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listRuntimes(): Promise<Models.RuntimeList>;
     /**
      * Get Functions Usage
@@ -51,7 +51,7 @@ export declare class Functions extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range?: string): Promise<Models.UsageFunctions>;
     /**
      * Get Function
@@ -61,7 +61,7 @@ export declare class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(functionId: string): Promise<Models.Function>;
     /**
      * Update Function
@@ -77,7 +77,7 @@ export declare class Functions extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     update(functionId: string, name: string, execute?: string[], events?: string[], schedule?: string, timeout?: number, enabled?: boolean): Promise<Models.Function>;
     /**
      * Delete Function
@@ -87,7 +87,7 @@ export declare class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(functionId: string): Promise<{}>;
     /**
      * List Deployments
@@ -100,7 +100,7 @@ export declare class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDeployments(functionId: string, queries?: string[], search?: string): Promise<Models.DeploymentList>;
     /**
      * Create Deployment
@@ -122,7 +122,7 @@ export declare class Functions extends Service {
      * @param {boolean} activate
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDeployment(functionId: string, entrypoint: string, code: File, activate: boolean, onProgress?: (progress: UploadProgress) => void): Promise<Models.Deployment>;
     /**
      * Get Deployment
@@ -133,7 +133,7 @@ export declare class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDeployment(functionId: string, deploymentId: string): Promise<Models.Deployment>;
     /**
      * Update Function Deployment
@@ -146,7 +146,7 @@ export declare class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDeployment(functionId: string, deploymentId: string): Promise<Models.Function>;
     /**
      * Delete Deployment
@@ -157,7 +157,7 @@ export declare class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDeployment(functionId: string, deploymentId: string): Promise<{}>;
     /**
      * Create Build
@@ -168,21 +168,8 @@ export declare class Functions extends Service {
      * @param {string} buildId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBuild(functionId: string, deploymentId: string, buildId: string): Promise<{}>;
-    /**
-     * Download Deployment
-     *
-     * Download a code deployment by its unique ID. The endpoint response returns
-     * with a 'Content-Disposition: attachment' header that tells the browser to
-     * start downloading the file to user downloads directory.
-     *
-     * @param {string} functionId
-     * @param {string} deploymentId
-     * @throws {AppwriteException}
-     * @returns {URL}
-     */
-    downloadDeployment(functionId: string, deploymentId: string): URL;
     /**
      * List Executions
      *
@@ -194,7 +181,7 @@ export declare class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listExecutions(functionId: string, queries?: string[], search?: string): Promise<Models.ExecutionList>;
     /**
      * Create Execution
@@ -209,7 +196,7 @@ export declare class Functions extends Service {
      * @param {boolean} async
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createExecution(functionId: string, data?: string, async?: boolean): Promise<Models.Execution>;
     /**
      * Get Execution
@@ -220,7 +207,7 @@ export declare class Functions extends Service {
      * @param {string} executionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getExecution(functionId: string, executionId: string): Promise<Models.Execution>;
     /**
      * Get Function Usage
@@ -230,7 +217,7 @@ export declare class Functions extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getFunctionUsage(functionId: string, range?: string): Promise<Models.UsageFunctions>;
     /**
      * List Variables
@@ -240,7 +227,7 @@ export declare class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listVariables(functionId: string): Promise<Models.VariableList>;
     /**
      * Create Variable
@@ -253,7 +240,7 @@ export declare class Functions extends Service {
      * @param {string} value
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createVariable(functionId: string, key: string, value: string): Promise<Models.Variable>;
     /**
      * Get Variable
@@ -264,7 +251,7 @@ export declare class Functions extends Service {
      * @param {string} variableId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getVariable(functionId: string, variableId: string): Promise<Models.Variable>;
     /**
      * Update Variable
@@ -277,7 +264,7 @@ export declare class Functions extends Service {
      * @param {string} value
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateVariable(functionId: string, variableId: string, key: string, value?: string): Promise<Models.Variable>;
     /**
      * Delete Variable
@@ -288,6 +275,6 @@ export declare class Functions extends Service {
      * @param {string} variableId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteVariable(functionId: string, variableId: string): Promise<{}>;
 }

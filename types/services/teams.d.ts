@@ -13,7 +13,7 @@ export declare class Teams extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list<Preferences extends Models.Preferences>(queries?: string[], search?: string): Promise<Models.TeamList<Preferences>>;
     /**
      * Create Team
@@ -27,7 +27,7 @@ export declare class Teams extends Service {
      * @param {string[]} roles
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create<Preferences extends Models.Preferences>(teamId: string, name: string, roles?: string[]): Promise<Models.Team<Preferences>>;
     /**
      * Get Team
@@ -37,7 +37,7 @@ export declare class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get<Preferences extends Models.Preferences>(teamId: string): Promise<Models.Team<Preferences>>;
     /**
      * Update Name
@@ -48,7 +48,7 @@ export declare class Teams extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName<Preferences extends Models.Preferences>(teamId: string, name: string): Promise<Models.Team<Preferences>>;
     /**
      * Delete Team
@@ -59,7 +59,7 @@ export declare class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(teamId: string): Promise<{}>;
     /**
      * List Team Logs
@@ -70,7 +70,7 @@ export declare class Teams extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(teamId: string, queries?: string[]): Promise<Models.LogList>;
     /**
      * List Team Memberships
@@ -83,7 +83,7 @@ export declare class Teams extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listMemberships(teamId: string, queries?: string[], search?: string): Promise<Models.MembershipList>;
     /**
      * Create Team Membership
@@ -112,15 +112,15 @@ export declare class Teams extends Service {
      *
      * @param {string} teamId
      * @param {string[]} roles
+     * @param {string} url
      * @param {string} email
      * @param {string} userId
      * @param {string} phone
-     * @param {string} url
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    createMembership(teamId: string, roles: string[], email?: string, userId?: string, phone?: string, url?: string, name?: string): Promise<Models.Membership>;
+    */
+    createMembership(teamId: string, roles: string[], url: string, email?: string, userId?: string, phone?: string, name?: string): Promise<Models.Membership>;
     /**
      * Get Team Membership
      *
@@ -131,7 +131,7 @@ export declare class Teams extends Service {
      * @param {string} membershipId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getMembership(teamId: string, membershipId: string): Promise<Models.Membership>;
     /**
      * Update Membership Roles
@@ -145,7 +145,7 @@ export declare class Teams extends Service {
      * @param {string[]} roles
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMembershipRoles(teamId: string, membershipId: string, roles: string[]): Promise<Models.Membership>;
     /**
      * Delete Team Membership
@@ -158,7 +158,7 @@ export declare class Teams extends Service {
      * @param {string} membershipId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteMembership(teamId: string, membershipId: string): Promise<{}>;
     /**
      * Update Team Membership Status
@@ -177,7 +177,7 @@ export declare class Teams extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMembershipStatus(teamId: string, membershipId: string, userId: string, secret: string): Promise<Models.Membership>;
     /**
      * Get Team Preferences
@@ -189,7 +189,7 @@ export declare class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs<Preferences extends Models.Preferences>(teamId: string): Promise<Preferences>;
     /**
      * Update Preferences
@@ -202,6 +202,6 @@ export declare class Teams extends Service {
      * @param {object} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs<Preferences extends Models.Preferences>(teamId: string, prefs: object): Promise<Preferences>;
 }

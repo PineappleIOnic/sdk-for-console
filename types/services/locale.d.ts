@@ -15,8 +15,18 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(): Promise<Models.Locale>;
+    /**
+     * List Locale Codes
+     *
+     * List of all locale codes in [ISO
+     * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    listCodes(): Promise<Models.LocaleCodeList>;
     /**
      * List Continents
      *
@@ -25,7 +35,7 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listContinents(): Promise<Models.ContinentList>;
     /**
      * List Countries
@@ -35,7 +45,7 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountries(): Promise<Models.CountryList>;
     /**
      * List EU Countries
@@ -45,7 +55,7 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountriesEU(): Promise<Models.CountryList>;
     /**
      * List Countries Phone Codes
@@ -55,7 +65,7 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountriesPhones(): Promise<Models.PhoneList>;
     /**
      * List Currencies
@@ -66,7 +76,7 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCurrencies(): Promise<Models.CurrencyList>;
     /**
      * List Languages
@@ -76,6 +86,6 @@ export declare class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLanguages(): Promise<Models.LanguageList>;
 }

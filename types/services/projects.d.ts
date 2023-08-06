@@ -11,7 +11,7 @@ export declare class Projects extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries?: string[], search?: string): Promise<Models.ProjectList>;
     /**
      * Create Project
@@ -32,7 +32,7 @@ export declare class Projects extends Service {
      * @param {string} legalTaxId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(projectId: string, name: string, teamId: string, region?: string, description?: string, logo?: string, url?: string, legalName?: string, legalCountry?: string, legalState?: string, legalCity?: string, legalAddress?: string, legalTaxId?: string): Promise<Models.Project>;
     /**
      * Get Project
@@ -41,7 +41,7 @@ export declare class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(projectId: string): Promise<Models.Project>;
     /**
      * Update Project
@@ -60,18 +60,17 @@ export declare class Projects extends Service {
      * @param {string} legalTaxId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     update(projectId: string, name: string, description?: string, logo?: string, url?: string, legalName?: string, legalCountry?: string, legalState?: string, legalCity?: string, legalAddress?: string, legalTaxId?: string): Promise<Models.Project>;
     /**
      * Delete Project
      *
      *
      * @param {string} projectId
-     * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    delete(projectId: string, password: string): Promise<{}>;
+    */
+    delete(projectId: string): Promise<{}>;
     /**
      * Update Project Authentication Duration
      *
@@ -80,7 +79,7 @@ export declare class Projects extends Service {
      * @param {number} duration
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthDuration(projectId: string, duration: number): Promise<Models.Project>;
     /**
      * Update Project users limit
@@ -90,7 +89,7 @@ export declare class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthLimit(projectId: string, limit: number): Promise<Models.Project>;
     /**
      * Update Project user sessions limit
@@ -100,7 +99,7 @@ export declare class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthSessionsLimit(projectId: string, limit: number): Promise<Models.Project>;
     /**
      * Update authentication password disctionary status. Use this endpoint to enable or disable the dicitonary check for user password
@@ -110,7 +109,7 @@ export declare class Projects extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthPasswordDictionary(projectId: string, enabled: boolean): Promise<Models.Project>;
     /**
      * Update authentication password history. Use this endpoint to set the number of password history to save and 0 to disable password history.
@@ -120,7 +119,7 @@ export declare class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthPasswordHistory(projectId: string, limit: number): Promise<Models.Project>;
     /**
      * Update Project auth method status. Use this endpoint to enable or disable a given auth method for this project.
@@ -131,7 +130,7 @@ export declare class Projects extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthStatus(projectId: string, method: string, status: boolean): Promise<Models.Project>;
     /**
      * List Domains
@@ -140,7 +139,7 @@ export declare class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDomains(projectId: string): Promise<Models.DomainList>;
     /**
      * Create Domain
@@ -150,7 +149,7 @@ export declare class Projects extends Service {
      * @param {string} domain
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDomain(projectId: string, domain: string): Promise<Models.Domain>;
     /**
      * Get Domain
@@ -160,7 +159,7 @@ export declare class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDomain(projectId: string, domainId: string): Promise<Models.Domain>;
     /**
      * Delete Domain
@@ -170,7 +169,7 @@ export declare class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDomain(projectId: string, domainId: string): Promise<{}>;
     /**
      * Update Domain Verification Status
@@ -180,7 +179,7 @@ export declare class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDomainVerification(projectId: string, domainId: string): Promise<Models.Domain>;
     /**
      * List Keys
@@ -189,7 +188,7 @@ export declare class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listKeys(projectId: string): Promise<Models.KeyList>;
     /**
      * Create Key
@@ -201,7 +200,7 @@ export declare class Projects extends Service {
      * @param {string} expire
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createKey(projectId: string, name: string, scopes: string[], expire?: string): Promise<Models.Key>;
     /**
      * Get Key
@@ -211,7 +210,7 @@ export declare class Projects extends Service {
      * @param {string} keyId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getKey(projectId: string, keyId: string): Promise<Models.Key>;
     /**
      * Update Key
@@ -224,7 +223,7 @@ export declare class Projects extends Service {
      * @param {string} expire
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateKey(projectId: string, keyId: string, name: string, scopes: string[], expire?: string): Promise<Models.Key>;
     /**
      * Delete Key
@@ -234,7 +233,7 @@ export declare class Projects extends Service {
      * @param {string} keyId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteKey(projectId: string, keyId: string): Promise<{}>;
     /**
      * Update Project OAuth2
@@ -247,7 +246,7 @@ export declare class Projects extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateOAuth2(projectId: string, provider: string, appId?: string, secret?: string, enabled?: boolean): Promise<Models.Project>;
     /**
      * List Platforms
@@ -256,7 +255,7 @@ export declare class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listPlatforms(projectId: string): Promise<Models.PlatformList>;
     /**
      * Create Platform
@@ -270,7 +269,7 @@ export declare class Projects extends Service {
      * @param {string} hostname
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPlatform(projectId: string, type: string, name: string, key?: string, store?: string, hostname?: string): Promise<Models.Platform>;
     /**
      * Get Platform
@@ -280,7 +279,7 @@ export declare class Projects extends Service {
      * @param {string} platformId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPlatform(projectId: string, platformId: string): Promise<Models.Platform>;
     /**
      * Update Platform
@@ -294,7 +293,7 @@ export declare class Projects extends Service {
      * @param {string} hostname
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePlatform(projectId: string, platformId: string, name: string, key?: string, store?: string, hostname?: string): Promise<Models.Platform>;
     /**
      * Delete Platform
@@ -304,7 +303,7 @@ export declare class Projects extends Service {
      * @param {string} platformId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deletePlatform(projectId: string, platformId: string): Promise<{}>;
     /**
      * Update service status
@@ -315,8 +314,116 @@ export declare class Projects extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateServiceStatus(projectId: string, service: string, status: boolean): Promise<Models.Project>;
+    /**
+     * Update all service status
+     *
+     *
+     * @param {string} projectId
+     * @param {boolean} status
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateServiceStatusAll(projectId: string, status: boolean): Promise<Models.Project>;
+    /**
+     * Update SMTP configuration
+     *
+     *
+     * @param {string} projectId
+     * @param {boolean} enabled
+     * @param {string} sender
+     * @param {string} host
+     * @param {number} port
+     * @param {string} username
+     * @param {string} password
+     * @param {string} secure
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateSmtpConfiguration(projectId: string, enabled: boolean, sender: string, host: string, port: number, username: string, password: string, secure?: string): Promise<Models.Project>;
+    /**
+     * Update Project Team
+     *
+     *
+     * @param {string} projectId
+     * @param {string} teamId
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateTeam(projectId: string, teamId: string): Promise<Models.Project>;
+    /**
+     * Get custom email template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getEmailTemplate(projectId: string, type: string, locale: string): Promise<Models.EmailTemplate>;
+    /**
+     * Update custom email templates
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @param {string} senderName
+     * @param {string} senderEmail
+     * @param {string} subject
+     * @param {string} message
+     * @param {string} replyTo
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateEmailTemplate(projectId: string, type: string, locale: string, senderName: string, senderEmail: string, subject: string, message: string, replyTo?: string): Promise<Models.Project>;
+    /**
+     * Reset custom email template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    deleteEmailTemplate(projectId: string, type: string, locale: string): Promise<Models.EmailTemplate>;
+    /**
+     * Get custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getSmsTemplate(projectId: string, type: string, locale: string): Promise<Models.SmsTemplate>;
+    /**
+     * Update custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @param {string} message
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateSmsTemplate(projectId: string, type: string, locale: string, message: string): Promise<Models.SmsTemplate>;
+    /**
+     * Reset custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    deleteSmsTemplate(projectId: string, type: string, locale: string): Promise<Models.SmsTemplate>;
     /**
      * Get usage stats for a project
      *
@@ -325,7 +432,7 @@ export declare class Projects extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(projectId: string, range?: string): Promise<Models.UsageProject>;
     /**
      * List Webhooks
@@ -334,7 +441,7 @@ export declare class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listWebhooks(projectId: string): Promise<Models.WebhookList>;
     /**
      * Create Webhook
@@ -349,7 +456,7 @@ export declare class Projects extends Service {
      * @param {string} httpPass
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createWebhook(projectId: string, name: string, events: string[], url: string, security: boolean, httpUser?: string, httpPass?: string): Promise<Models.Webhook>;
     /**
      * Get Webhook
@@ -359,7 +466,7 @@ export declare class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getWebhook(projectId: string, webhookId: string): Promise<Models.Webhook>;
     /**
      * Update Webhook
@@ -375,7 +482,7 @@ export declare class Projects extends Service {
      * @param {string} httpPass
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateWebhook(projectId: string, webhookId: string, name: string, events: string[], url: string, security: boolean, httpUser?: string, httpPass?: string): Promise<Models.Webhook>;
     /**
      * Delete Webhook
@@ -385,7 +492,7 @@ export declare class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteWebhook(projectId: string, webhookId: string): Promise<{}>;
     /**
      * Update Webhook Signature Key
@@ -395,6 +502,6 @@ export declare class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateWebhookSignature(projectId: string, webhookId: string): Promise<Models.Webhook>;
 }

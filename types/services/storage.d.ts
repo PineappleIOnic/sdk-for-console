@@ -14,7 +14,7 @@ export declare class Storage extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listBuckets(queries?: string[], search?: string): Promise<Models.BucketList>;
     /**
      * Create bucket
@@ -33,7 +33,7 @@ export declare class Storage extends Service {
      * @param {boolean} antivirus
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBucket(bucketId: string, name: string, permissions?: string[], fileSecurity?: boolean, enabled?: boolean, maximumFileSize?: number, allowedFileExtensions?: string[], compression?: string, encryption?: boolean, antivirus?: boolean): Promise<Models.Bucket>;
     /**
      * Get Bucket
@@ -44,7 +44,7 @@ export declare class Storage extends Service {
      * @param {string} bucketId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getBucket(bucketId: string): Promise<Models.Bucket>;
     /**
      * Update Bucket
@@ -63,7 +63,7 @@ export declare class Storage extends Service {
      * @param {boolean} antivirus
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateBucket(bucketId: string, name: string, permissions?: string[], fileSecurity?: boolean, enabled?: boolean, maximumFileSize?: number, allowedFileExtensions?: string[], compression?: string, encryption?: boolean, antivirus?: boolean): Promise<Models.Bucket>;
     /**
      * Delete Bucket
@@ -73,7 +73,7 @@ export declare class Storage extends Service {
      * @param {string} bucketId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteBucket(bucketId: string): Promise<{}>;
     /**
      * List Files
@@ -86,7 +86,7 @@ export declare class Storage extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listFiles(bucketId: string, queries?: string[], search?: string): Promise<Models.FileList>;
     /**
      * Create File
@@ -116,7 +116,7 @@ export declare class Storage extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createFile(bucketId: string, fileId: string, file: File, permissions?: string[], onProgress?: (progress: UploadProgress) => void): Promise<Models.File>;
     /**
      * Get File
@@ -128,7 +128,7 @@ export declare class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getFile(bucketId: string, fileId: string): Promise<Models.File>;
     /**
      * Update File
@@ -138,11 +138,12 @@ export declare class Storage extends Service {
      *
      * @param {string} bucketId
      * @param {string} fileId
+     * @param {string} name
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    updateFile(bucketId: string, fileId: string, permissions?: string[]): Promise<Models.File>;
+    */
+    updateFile(bucketId: string, fileId: string, name?: string, permissions?: string[]): Promise<Models.File>;
     /**
      * Delete File
      *
@@ -153,12 +154,12 @@ export declare class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteFile(bucketId: string, fileId: string): Promise<{}>;
     /**
      * Get File for Download
      *
-     * Get a file content by its unique ID. The endpoint response returns with a
+     * Get a file content by its unique ID. The endpoint response return with a
      * 'Content-Disposition: attachment' header that tells the browser to start
      * downloading the file to user downloads directory.
      *
@@ -166,7 +167,7 @@ export declare class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFileDownload(bucketId: string, fileId: string): URL;
     /**
      * Get File Preview
@@ -192,7 +193,7 @@ export declare class Storage extends Service {
      * @param {string} output
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFilePreview(bucketId: string, fileId: string, width?: number, height?: number, gravity?: string, quality?: number, borderWidth?: number, borderColor?: string, borderRadius?: number, opacity?: number, rotation?: number, background?: string, output?: string): URL;
     /**
      * Get File for View
@@ -205,7 +206,7 @@ export declare class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFileView(bucketId: string, fileId: string): URL;
     /**
      * Get usage stats for storage
@@ -214,7 +215,7 @@ export declare class Storage extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range?: string): Promise<Models.UsageStorage>;
     /**
      * Get usage stats for a storage bucket
@@ -224,6 +225,6 @@ export declare class Storage extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getBucketUsage(bucketId: string, range?: string): Promise<Models.UsageBuckets>;
 }

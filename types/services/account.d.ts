@@ -10,7 +10,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get<Preferences extends Models.Preferences>(): Promise<Models.User<Preferences>>;
     /**
      * Create Account
@@ -28,7 +28,7 @@ export declare class Account extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Update Email
@@ -46,7 +46,7 @@ export declare class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmail<Preferences extends Models.Preferences>(email: string, password: string): Promise<Models.User<Preferences>>;
     /**
      * Create JWT
@@ -59,7 +59,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createJWT(): Promise<Models.Jwt>;
     /**
      * List Logs
@@ -70,7 +70,7 @@ export declare class Account extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(queries?: string[]): Promise<Models.LogList>;
     /**
      * Update Name
@@ -80,7 +80,7 @@ export declare class Account extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName<Preferences extends Models.Preferences>(name: string): Promise<Models.User<Preferences>>;
     /**
      * Update Password
@@ -93,7 +93,7 @@ export declare class Account extends Service {
      * @param {string} oldPassword
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePassword<Preferences extends Models.Preferences>(password: string, oldPassword?: string): Promise<Models.User<Preferences>>;
     /**
      * Update Phone
@@ -108,7 +108,7 @@ export declare class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhone<Preferences extends Models.Preferences>(phone: string, password: string): Promise<Models.User<Preferences>>;
     /**
      * Get Account Preferences
@@ -117,7 +117,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs<Preferences extends Models.Preferences>(): Promise<Preferences>;
     /**
      * Update Preferences
@@ -129,7 +129,7 @@ export declare class Account extends Service {
      * @param {Partial<Preferences>} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs<Preferences extends Models.Preferences>(prefs: Partial<Preferences>): Promise<Models.User<Preferences>>;
     /**
      * Create Password Recovery
@@ -147,7 +147,7 @@ export declare class Account extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createRecovery(email: string, url: string): Promise<Models.Token>;
     /**
      * Create Password Recovery (confirmation)
@@ -168,7 +168,7 @@ export declare class Account extends Service {
      * @param {string} passwordAgain
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateRecovery(userId: string, secret: string, password: string, passwordAgain: string): Promise<Models.Token>;
     /**
      * List Sessions
@@ -178,7 +178,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listSessions(): Promise<Models.SessionList>;
     /**
      * Delete Sessions
@@ -188,7 +188,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSessions(): Promise<{}>;
     /**
      * Create Anonymous Session
@@ -202,7 +202,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createAnonymousSession(): Promise<Models.Session>;
     /**
      * Create Email Session
@@ -217,13 +217,13 @@ export declare class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEmailSession(email: string, password: string): Promise<Models.Session>;
     /**
      * Create Magic URL session
      *
      * Sends the user an email with a secret key for creating a session. If the
-     * provided user ID has not be registered, a new user will be created. When
+     * provided user ID has not been registered, a new user will be created. When
      * the user clicks the link in the email, the user is redirected back to the
      * URL you provided with the secret key and userId values attached to the URL
      * query string. Use the query string parameters to submit a request to the
@@ -237,12 +237,13 @@ export declare class Account extends Service {
      * A user is limited to 10 active sessions at a time by default. [Learn more
      * about session limits](/docs/authentication-security#limits).
      *
+     *
      * @param {string} userId
      * @param {string} email
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createMagicURLSession(userId: string, email: string, url?: string): Promise<Models.Token>;
     /**
      * Create Magic URL session (confirmation)
@@ -263,7 +264,7 @@ export declare class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMagicURLSession(userId: string, secret: string): Promise<Models.Session>;
     /**
      * Create OAuth2 Session
@@ -290,7 +291,7 @@ export declare class Account extends Service {
      * @param {string[]} scopes
      * @throws {AppwriteException}
      * @returns {void|string}
-     */
+    */
     createOAuth2Session(provider: string, success?: string, failure?: string, scopes?: string[]): void | URL;
     /**
      * Create Phone session
@@ -309,7 +310,7 @@ export declare class Account extends Service {
      * @param {string} phone
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPhoneSession(userId: string, phone: string): Promise<Models.Token>;
     /**
      * Create Phone Session (confirmation)
@@ -324,7 +325,7 @@ export declare class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneSession(userId: string, secret: string): Promise<Models.Session>;
     /**
      * Get Session
@@ -335,7 +336,7 @@ export declare class Account extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getSession(sessionId: string): Promise<Models.Session>;
     /**
      * Update OAuth Session (Refresh Tokens)
@@ -347,20 +348,20 @@ export declare class Account extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateSession(sessionId: string): Promise<Models.Session>;
     /**
      * Delete Session
      *
-     * Use this endpoint to log out the currently logged in user from all their
-     * account sessions across all of their different devices. When using the
-     * Session ID argument, only the unique session ID provided is deleted.
-     *
+     * Logout the user. Use 'current' as the session ID to logout on this device,
+     * use a session ID to logout on another device. If you're looking to logout
+     * the user on all devices, use [Delete
+     * Sessions](/docs/client/account#accountDeleteSessions) instead.
      *
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSession(sessionId: string): Promise<{}>;
     /**
      * Update Status
@@ -371,7 +372,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStatus<Preferences extends Models.Preferences>(): Promise<Models.User<Preferences>>;
     /**
      * Create Email Verification
@@ -395,7 +396,7 @@ export declare class Account extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createVerification(url: string): Promise<Models.Token>;
     /**
      * Create Email Verification (confirmation)
@@ -409,7 +410,7 @@ export declare class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateVerification(userId: string, secret: string): Promise<Models.Token>;
     /**
      * Create Phone Verification
@@ -423,7 +424,7 @@ export declare class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPhoneVerification(): Promise<Models.Token>;
     /**
      * Create Phone Verification (confirmation)
@@ -437,6 +438,6 @@ export declare class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneVerification(userId: string, secret: string): Promise<Models.Token>;
 }

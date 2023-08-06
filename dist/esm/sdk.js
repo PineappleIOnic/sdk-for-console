@@ -446,7 +446,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account';
@@ -473,7 +473,7 @@ class Account extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(userId, email, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -521,7 +521,7 @@ class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmail(email, password) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof email === 'undefined') {
@@ -555,7 +555,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createJWT() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/jwt';
@@ -575,7 +575,7 @@ class Account extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(queries) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/logs';
@@ -597,7 +597,7 @@ class Account extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName(name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof name === 'undefined') {
@@ -625,7 +625,7 @@ class Account extends Service {
      * @param {string} oldPassword
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePassword(password, oldPassword) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof password === 'undefined') {
@@ -658,7 +658,7 @@ class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhone(phone, password) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof phone === 'undefined') {
@@ -688,7 +688,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/prefs';
@@ -709,7 +709,7 @@ class Account extends Service {
      * @param {Partial<Preferences>} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs(prefs) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof prefs === 'undefined') {
@@ -742,7 +742,7 @@ class Account extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createRecovery(email, url) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof email === 'undefined') {
@@ -784,7 +784,7 @@ class Account extends Service {
      * @param {string} passwordAgain
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateRecovery(userId, secret, password, passwordAgain) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -827,7 +827,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listSessions() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/sessions';
@@ -846,7 +846,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSessions() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/sessions';
@@ -869,7 +869,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createAnonymousSession() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/sessions/anonymous';
@@ -893,7 +893,7 @@ class Account extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEmailSession(email, password) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof email === 'undefined') {
@@ -920,7 +920,7 @@ class Account extends Service {
      * Create Magic URL session
      *
      * Sends the user an email with a secret key for creating a session. If the
-     * provided user ID has not be registered, a new user will be created. When
+     * provided user ID has not been registered, a new user will be created. When
      * the user clicks the link in the email, the user is redirected back to the
      * URL you provided with the secret key and userId values attached to the URL
      * query string. Use the query string parameters to submit a request to the
@@ -934,12 +934,13 @@ class Account extends Service {
      * A user is limited to 10 active sessions at a time by default. [Learn more
      * about session limits](/docs/authentication-security#limits).
      *
+     *
      * @param {string} userId
      * @param {string} email
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createMagicURLSession(userId, email, url) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -984,7 +985,7 @@ class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMagicURLSession(userId, secret) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -1032,7 +1033,7 @@ class Account extends Service {
      * @param {string[]} scopes
      * @throws {AppwriteException}
      * @returns {void|string}
-     */
+    */
     createOAuth2Session(provider, success, failure, scopes) {
         if (typeof provider === 'undefined') {
             throw new AppwriteException('Missing required parameter: "provider"');
@@ -1077,7 +1078,7 @@ class Account extends Service {
      * @param {string} phone
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPhoneSession(userId, phone) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -1113,7 +1114,7 @@ class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneSession(userId, secret) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -1145,7 +1146,7 @@ class Account extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getSession(sessionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof sessionId === 'undefined') {
@@ -1169,7 +1170,7 @@ class Account extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateSession(sessionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof sessionId === 'undefined') {
@@ -1186,15 +1187,15 @@ class Account extends Service {
     /**
      * Delete Session
      *
-     * Use this endpoint to log out the currently logged in user from all their
-     * account sessions across all of their different devices. When using the
-     * Session ID argument, only the unique session ID provided is deleted.
-     *
+     * Logout the user. Use 'current' as the session ID to logout on this device,
+     * use a session ID to logout on another device. If you're looking to logout
+     * the user on all devices, use [Delete
+     * Sessions](/docs/client/account#accountDeleteSessions) instead.
      *
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSession(sessionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof sessionId === 'undefined') {
@@ -1217,7 +1218,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStatus() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/status';
@@ -1250,7 +1251,7 @@ class Account extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createVerification(url) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof url === 'undefined') {
@@ -1279,7 +1280,7 @@ class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateVerification(userId, secret) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -1314,7 +1315,7 @@ class Account extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPhoneVerification() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/account/verification/phone';
@@ -1337,7 +1338,7 @@ class Account extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneVerification(userId, secret) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -1385,7 +1386,7 @@ class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getBrowser(code, width, height, quality) {
         if (typeof code === 'undefined') {
             throw new AppwriteException('Missing required parameter: "code"');
@@ -1427,7 +1428,7 @@ class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getCreditCard(code, width, height, quality) {
         if (typeof code === 'undefined') {
             throw new AppwriteException('Missing required parameter: "code"');
@@ -1460,7 +1461,7 @@ class Avatars extends Service {
      * @param {string} url
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFavicon(url) {
         if (typeof url === 'undefined') {
             throw new AppwriteException('Missing required parameter: "url"');
@@ -1497,7 +1498,7 @@ class Avatars extends Service {
      * @param {number} quality
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFlag(code, width, height, quality) {
         if (typeof code === 'undefined') {
             throw new AppwriteException('Missing required parameter: "code"');
@@ -1539,7 +1540,7 @@ class Avatars extends Service {
      * @param {number} height
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getImage(url, width, height) {
         if (typeof url === 'undefined') {
             throw new AppwriteException('Missing required parameter: "url"');
@@ -1588,7 +1589,7 @@ class Avatars extends Service {
      * @param {string} background
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getInitials(name, width, height, background) {
         let path = '/avatars/initials';
         let payload = {};
@@ -1624,7 +1625,7 @@ class Avatars extends Service {
      * @param {boolean} download
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getQR(text, size, margin, download) {
         if (typeof text === 'undefined') {
             throw new AppwriteException('Missing required parameter: "text"');
@@ -1663,7 +1664,7 @@ class Console extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     variables() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/console/variables';
@@ -1690,7 +1691,7 @@ class Databases extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/databases';
@@ -1715,10 +1716,11 @@ class Databases extends Service {
      *
      * @param {string} databaseId
      * @param {string} name
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    create(databaseId, name) {
+    */
+    create(databaseId, name, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "databaseId"');
@@ -1734,6 +1736,9 @@ class Databases extends Service {
             if (typeof name !== 'undefined') {
                 payload['name'] = name;
             }
+            if (typeof enabled !== 'undefined') {
+                payload['enabled'] = enabled;
+            }
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('post', uri, {
                 'content-type': 'application/json',
@@ -1747,7 +1752,7 @@ class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/databases/usage';
@@ -1770,7 +1775,7 @@ class Databases extends Service {
      * @param {string} databaseId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(databaseId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -1791,10 +1796,11 @@ class Databases extends Service {
      *
      * @param {string} databaseId
      * @param {string} name
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    update(databaseId, name) {
+    */
+    update(databaseId, name, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "databaseId"');
@@ -1806,6 +1812,9 @@ class Databases extends Service {
             let payload = {};
             if (typeof name !== 'undefined') {
                 payload['name'] = name;
+            }
+            if (typeof enabled !== 'undefined') {
+                payload['enabled'] = enabled;
             }
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('put', uri, {
@@ -1822,7 +1831,7 @@ class Databases extends Service {
      * @param {string} databaseId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(databaseId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -1847,7 +1856,7 @@ class Databases extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCollections(databaseId, queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -1880,10 +1889,11 @@ class Databases extends Service {
      * @param {string} name
      * @param {string[]} permissions
      * @param {boolean} documentSecurity
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    createCollection(databaseId, collectionId, name, permissions, documentSecurity) {
+    */
+    createCollection(databaseId, collectionId, name, permissions, documentSecurity, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "databaseId"');
@@ -1908,6 +1918,9 @@ class Databases extends Service {
             if (typeof documentSecurity !== 'undefined') {
                 payload['documentSecurity'] = documentSecurity;
             }
+            if (typeof enabled !== 'undefined') {
+                payload['enabled'] = enabled;
+            }
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('post', uri, {
                 'content-type': 'application/json',
@@ -1924,7 +1937,7 @@ class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCollection(databaseId, collectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -1954,7 +1967,7 @@ class Databases extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateCollection(databaseId, collectionId, name, permissions, documentSecurity, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -1996,7 +2009,7 @@ class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteCollection(databaseId, collectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2021,7 +2034,7 @@ class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listAttributes(databaseId, collectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2052,7 +2065,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBooleanAttribute(databaseId, collectionId, key, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2098,7 +2111,7 @@ class Databases extends Service {
      * @param {boolean} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateBooleanAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2142,7 +2155,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDatetimeAttribute(databaseId, collectionId, key, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2188,7 +2201,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDatetimeAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2234,7 +2247,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEmailAttribute(databaseId, collectionId, key, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2283,7 +2296,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmailAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2328,7 +2341,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEnumAttribute(databaseId, collectionId, key, elements, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2384,7 +2397,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEnumAttribute(databaseId, collectionId, key, elements, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2439,7 +2452,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createFloatAttribute(databaseId, collectionId, key, required, min, max, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2496,7 +2509,7 @@ class Databases extends Service {
      * @param {number} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateFloatAttribute(databaseId, collectionId, key, required, min, max, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2557,7 +2570,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIntegerAttribute(databaseId, collectionId, key, required, min, max, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2614,7 +2627,7 @@ class Databases extends Service {
      * @param {number} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateIntegerAttribute(databaseId, collectionId, key, required, min, max, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2672,7 +2685,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIpAttribute(databaseId, collectionId, key, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2721,7 +2734,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateIpAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2770,7 +2783,7 @@ class Databases extends Service {
      * @param {string} onDelete
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createRelationshipAttribute(databaseId, collectionId, relatedCollectionId, type, twoWay, key, twoWayKey, onDelete) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2826,7 +2839,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createStringAttribute(databaseId, collectionId, key, size, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2881,7 +2894,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStringAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2927,7 +2940,7 @@ class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createUrlAttribute(databaseId, collectionId, key, required, xdefault, array) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -2976,7 +2989,7 @@ class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateUrlAttribute(databaseId, collectionId, key, required, xdefault) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3017,7 +3030,7 @@ class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getAttribute(databaseId, collectionId, key) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3046,7 +3059,7 @@ class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteAttribute(databaseId, collectionId, key) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3079,7 +3092,7 @@ class Databases extends Service {
      * @param {string} onDelete
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateRelationshipAttribute(databaseId, collectionId, key, onDelete) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3113,7 +3126,7 @@ class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDocuments(databaseId, collectionId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3148,7 +3161,7 @@ class Databases extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDocument(databaseId, collectionId, documentId, data, permissions) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3192,7 +3205,7 @@ class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDocument(databaseId, collectionId, documentId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3228,7 +3241,7 @@ class Databases extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDocument(databaseId, collectionId, documentId, data, permissions) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3264,7 +3277,7 @@ class Databases extends Service {
      * @param {string} documentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDocument(databaseId, collectionId, documentId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3295,7 +3308,7 @@ class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDocumentLogs(databaseId, collectionId, documentId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3326,7 +3339,7 @@ class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listIndexes(databaseId, collectionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3355,7 +3368,7 @@ class Databases extends Service {
      * @param {string[]} orders
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIndex(databaseId, collectionId, key, type, attributes, orders) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3402,7 +3415,7 @@ class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getIndex(databaseId, collectionId, key) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3431,7 +3444,7 @@ class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteIndex(databaseId, collectionId, key) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3461,7 +3474,7 @@ class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCollectionLogs(databaseId, collectionId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3490,7 +3503,7 @@ class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCollectionUsage(databaseId, collectionId, range) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3519,7 +3532,7 @@ class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(databaseId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3544,7 +3557,7 @@ class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDatabaseUsage(databaseId, range) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof databaseId === 'undefined') {
@@ -3577,7 +3590,7 @@ class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/functions';
@@ -3611,7 +3624,7 @@ class Functions extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(functionId, name, runtime, execute, events, schedule, timeout, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3662,7 +3675,7 @@ class Functions extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listRuntimes() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/functions/runtimes';
@@ -3680,7 +3693,7 @@ class Functions extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/functions/usage';
@@ -3702,7 +3715,7 @@ class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(functionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3730,7 +3743,7 @@ class Functions extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     update(functionId, name, execute, events, schedule, timeout, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3773,7 +3786,7 @@ class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(functionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3798,7 +3811,7 @@ class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDeployments(functionId, queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3838,7 +3851,7 @@ class Functions extends Service {
      * @param {boolean} activate
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDeployment(functionId, entrypoint, code, activate, onProgress = (progress) => { }) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3916,7 +3929,7 @@ class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDeployment(functionId, deploymentId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3944,7 +3957,7 @@ class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDeployment(functionId, deploymentId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3970,7 +3983,7 @@ class Functions extends Service {
      * @param {string} deploymentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDeployment(functionId, deploymentId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -3996,7 +4009,7 @@ class Functions extends Service {
      * @param {string} buildId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBuild(functionId, deploymentId, buildId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4017,34 +4030,6 @@ class Functions extends Service {
         });
     }
     /**
-     * Download Deployment
-     *
-     * Download a code deployment by its unique ID. The endpoint response returns
-     * with a 'Content-Disposition: attachment' header that tells the browser to
-     * start downloading the file to user downloads directory.
-     *
-     * @param {string} functionId
-     * @param {string} deploymentId
-     * @throws {AppwriteException}
-     * @returns {URL}
-     */
-    downloadDeployment(functionId, deploymentId) {
-        if (typeof functionId === 'undefined') {
-            throw new AppwriteException('Missing required parameter: "functionId"');
-        }
-        if (typeof deploymentId === 'undefined') {
-            throw new AppwriteException('Missing required parameter: "deploymentId"');
-        }
-        let path = '/functions/{functionId}/deployments/{deploymentId}/download'.replace('{functionId}', functionId).replace('{deploymentId}', deploymentId);
-        let payload = {};
-        const uri = new URL(this.client.config.endpoint + path);
-        payload['project'] = this.client.config.project;
-        for (const [key, value] of Object.entries(Service.flatten(payload))) {
-            uri.searchParams.append(key, value);
-        }
-        return uri;
-    }
-    /**
      * List Executions
      *
      * Get a list of all the current user function execution logs. You can use the
@@ -4055,7 +4040,7 @@ class Functions extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listExecutions(functionId, queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4088,7 +4073,7 @@ class Functions extends Service {
      * @param {boolean} async
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createExecution(functionId, data, async) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4117,7 +4102,7 @@ class Functions extends Service {
      * @param {string} executionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getExecution(functionId, executionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4142,7 +4127,7 @@ class Functions extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getFunctionUsage(functionId, range) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4167,7 +4152,7 @@ class Functions extends Service {
      * @param {string} functionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listVariables(functionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4192,7 +4177,7 @@ class Functions extends Service {
      * @param {string} value
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createVariable(functionId, key, value) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4227,7 +4212,7 @@ class Functions extends Service {
      * @param {string} variableId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getVariable(functionId, variableId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4255,7 +4240,7 @@ class Functions extends Service {
      * @param {string} value
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateVariable(functionId, variableId, key, value) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4290,7 +4275,7 @@ class Functions extends Service {
      * @param {string} variableId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteVariable(functionId, variableId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof functionId === 'undefined') {
@@ -4321,7 +4306,7 @@ class Graphql extends Service {
      * @param {object} query
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     query(query) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof query === 'undefined') {
@@ -4347,7 +4332,7 @@ class Graphql extends Service {
      * @param {object} query
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     mutation(query) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof query === 'undefined') {
@@ -4378,7 +4363,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health';
@@ -4396,7 +4381,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getAntivirus() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/anti-virus';
@@ -4415,7 +4400,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCache() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/cache';
@@ -4433,7 +4418,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDB() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/db';
@@ -4453,7 +4438,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueCertificates() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/queue/certificates';
@@ -4470,7 +4455,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueFunctions() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/queue/functions';
@@ -4489,7 +4474,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueLogs() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/queue/logs';
@@ -4508,7 +4493,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getQueueWebhooks() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/queue/webhooks';
@@ -4526,7 +4511,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getStorageLocal() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/storage/local';
@@ -4550,7 +4535,7 @@ class Health extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getTime() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/time';
@@ -4579,10 +4564,29 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale';
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * List Locale Codes
+     *
+     * List of all locale codes in [ISO
+     * 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes).
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    listCodes() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let path = '/locale/codes';
             let payload = {};
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('get', uri, {
@@ -4598,7 +4602,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listContinents() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/continents';
@@ -4617,7 +4621,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountries() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/countries';
@@ -4636,7 +4640,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountriesEU() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/countries/eu';
@@ -4655,7 +4659,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCountriesPhones() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/countries/phones';
@@ -4675,7 +4679,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCurrencies() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/currencies';
@@ -4694,7 +4698,7 @@ class Locale extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLanguages() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/locale/languages';
@@ -4714,14 +4718,12 @@ class Migrations extends Service {
     /**
      * List Migrations
      *
-     * Get a list of all the project's migrations. You can use the query params to
-     * filter your results.
      *
      * @param {string} queries
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/migrations';
@@ -4741,10 +4743,6 @@ class Migrations extends Service {
     /**
      * Migrate Appwrite Data
      *
-     * Initialize a migration to transfer data from an Appwrite instance over to
-     * your current Appwrite instance. The migration will be queued and processed
-     * by the Appwrite server. To learn more about the migration process, please
-     * check out our [migration guide](/docs/migrations).
      *
      * @param {string[]} resources
      * @param {string} endpoint
@@ -4752,8 +4750,8 @@ class Migrations extends Service {
      * @param {string} apiKey
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    migrateAppwrite(resources, endpoint, projectId, apiKey) {
+    */
+    createAppwriteMigration(resources, endpoint, projectId, apiKey) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "resources"');
@@ -4790,8 +4788,6 @@ class Migrations extends Service {
     /**
      * Generate a report on Appwrite Data
      *
-     * Perform permission checks and generate a report of the total data contained
-     * within a Appwrite instance including it's version number
      *
      * @param {string[]} resources
      * @param {string} endpoint
@@ -4799,7 +4795,7 @@ class Migrations extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getAppwriteReport(resources, endpoint, projectID, key) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
@@ -4837,17 +4833,13 @@ class Migrations extends Service {
     /**
      * Migrate Firebase Data (Service Account)
      *
-     * Initialize a migration to transfer data from an Firebase project over to
-     * your current Appwrite instance. The migration will be queued and processed
-     * by the Appwrite server. To learn more about the migration process, please
-     * check out our [migration guide](/docs/migrations).
      *
      * @param {string[]} resources
      * @param {string} serviceAccount
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    migrateFirebase(resources, serviceAccount) {
+    */
+    createFirebaseMigration(resources, serviceAccount) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "resources"');
@@ -4873,22 +4865,22 @@ class Migrations extends Service {
      * Authorize with firebase
      *
      *
-     * @param {string} projectId
+     * @param {string} project
      * @param {string} redirect
      * @throws {AppwriteException}
      * @returns {void|string}
-     */
-    createFirebaseAuth(projectId, redirect) {
-        if (typeof projectId === 'undefined') {
-            throw new AppwriteException('Missing required parameter: "projectId"');
+    */
+    createFirebaseAuth(project, redirect) {
+        if (typeof project === 'undefined') {
+            throw new AppwriteException('Missing required parameter: "project"');
         }
         let path = '/migrations/firebase/connect';
         let payload = {};
         if (typeof redirect !== 'undefined') {
             payload['redirect'] = redirect;
         }
-        if (typeof projectId !== 'undefined') {
-            payload['projectId'] = projectId;
+        if (typeof project !== 'undefined') {
+            payload['project'] = project;
         }
         const uri = new URL(this.client.config.endpoint + path);
         payload['project'] = this.client.config.project;
@@ -4908,8 +4900,8 @@ class Migrations extends Service {
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    firebaseDeauthorize() {
+    */
+    deleteFirebaseAuth() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/migrations/firebase/deauthorize';
             let payload = {};
@@ -4920,12 +4912,43 @@ class Migrations extends Service {
         });
     }
     /**
+     * Migrate Firebase Data (OAuth)
+     *
+     *
+     * @param {string[]} resources
+     * @param {string} projectId
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    createFirebaseOAuthMigration(resources, projectId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof resources === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "resources"');
+            }
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            let path = '/migrations/firebase/oauth';
+            let payload = {};
+            if (typeof resources !== 'undefined') {
+                payload['resources'] = resources;
+            }
+            if (typeof projectId !== 'undefined') {
+                payload['projectId'] = projectId;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('post', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
      * List Firebase Projects
      *
      *
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listFirebaseProjects() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/migrations/firebase/projects';
@@ -4939,15 +4962,12 @@ class Migrations extends Service {
     /**
      * Generate a report on Firebase Data
      *
-     * Perform permission checks against a Firebase project to make sure migration
-     * is possible with the supplied credentials. This API does not return any
-     * data. It only checks the permissions.
      *
      * @param {string[]} resources
      * @param {string} serviceAccount
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getFirebaseReport(resources, serviceAccount) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
@@ -4971,19 +4991,15 @@ class Migrations extends Service {
         });
     }
     /**
-     * Migrate Firebase Data (OAuth)
+     * Generate a report on Firebase Data using OAuth
      *
-     * Initialize a migration to transfer data from an Firebase project over to
-     * your current Appwrite instance. The migration will be queued and processed
-     * by the Appwrite server. To learn more about the migration process, please
-     * check out our [migration guide](/docs/migrations).
      *
      * @param {string[]} resources
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    migrateFirebaseOAuth(resources, projectId) {
+    */
+    getFirebaseReportOAuth(resources, projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "resources"');
@@ -4991,7 +5007,7 @@ class Migrations extends Service {
             if (typeof projectId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "projectId"');
             }
-            let path = '/migrations/firebaseOAuth';
+            let path = '/migrations/firebase/report/oauth';
             let payload = {};
             if (typeof resources !== 'undefined') {
                 payload['resources'] = resources;
@@ -5000,7 +5016,7 @@ class Migrations extends Service {
                 payload['projectId'] = projectId;
             }
             const uri = new URL(this.client.config.endpoint + path);
-            return yield this.client.call('post', uri, {
+            return yield this.client.call('get', uri, {
                 'content-type': 'application/json',
             }, payload);
         });
@@ -5008,10 +5024,6 @@ class Migrations extends Service {
     /**
      * Migrate NHost Data
      *
-     * Initialize a migration to transfer data from a NHost instance over to your
-     * current Appwrite instance. The migration will be queued and processed by
-     * the Appwrite server. To learn more about the migration process, please
-     * check out our [migration guide](/docs/migrations).
      *
      * @param {string[]} resources
      * @param {string} subdomain
@@ -5023,8 +5035,8 @@ class Migrations extends Service {
      * @param {number} port
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    migrateNHost(resources, subdomain, region, adminSecret, database, username, password, port) {
+    */
+    createNHostMigration(resources, subdomain, region, adminSecret, database, username, password, port) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "resources"');
@@ -5082,8 +5094,6 @@ class Migrations extends Service {
     /**
      * Generate a report on NHost Data
      *
-     * Perform permission checks and generate a report of the total data contained
-     * within a NHost instance
      *
      * @param {string[]} resources
      * @param {string} subdomain
@@ -5095,7 +5105,7 @@ class Migrations extends Service {
      * @param {number} port
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getNHostReport(resources, subdomain, region, adminSecret, database, username, password, port) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
@@ -5154,10 +5164,6 @@ class Migrations extends Service {
     /**
      * Migrate Supabase Data
      *
-     * Initialize a migration to transfer data from a Supabase instance over to
-     * your current Appwrite instance. The migration will be queued and processed
-     * by the Appwrite server. To learn more about the migration process, please
-     * check out our [migration guide](/docs/migrations).
      *
      * @param {string[]} resources
      * @param {string} endpoint
@@ -5168,8 +5174,8 @@ class Migrations extends Service {
      * @param {number} port
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    migrateSupabase(resources, endpoint, apiKey, databaseHost, username, password, port) {
+    */
+    createSupabaseMigration(resources, endpoint, apiKey, databaseHost, username, password, port) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "resources"');
@@ -5221,8 +5227,6 @@ class Migrations extends Service {
     /**
      * Generate a report on Supabase Data
      *
-     * Perform permission checks and generate a report of the total data contained
-     * within a Supabase instance
      *
      * @param {string[]} resources
      * @param {string} endpoint
@@ -5233,7 +5237,7 @@ class Migrations extends Service {
      * @param {number} port
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getSupabaseReport(resources, endpoint, apiKey, databaseHost, username, password, port) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof resources === 'undefined') {
@@ -5286,12 +5290,11 @@ class Migrations extends Service {
     /**
      * Get Migration
      *
-     * Get a migration by its unique ID.
      *
      * @param {string} migrationId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(migrationId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof migrationId === 'undefined') {
@@ -5308,13 +5311,11 @@ class Migrations extends Service {
     /**
      * Retry Migration
      *
-     * Retry a migration by its unique ID. The migration status must be failed or
-     * aborted for the request to succeed.
      *
      * @param {string} migrationId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     retry(migrationId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof migrationId === 'undefined') {
@@ -5335,7 +5336,7 @@ class Migrations extends Service {
      * @param {string} migrationId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(migrationId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof migrationId === 'undefined') {
@@ -5363,7 +5364,7 @@ class Projects extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/projects';
@@ -5399,7 +5400,7 @@ class Projects extends Service {
      * @param {string} legalTaxId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(projectId, name, teamId, region, description, logo, url, legalName, legalCountry, legalState, legalCity, legalAddress, legalTaxId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5465,7 +5466,7 @@ class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5496,7 +5497,7 @@ class Projects extends Service {
      * @param {string} legalTaxId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     update(projectId, name, description, logo, url, legalName, legalCountry, legalState, legalCity, legalAddress, legalTaxId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5548,23 +5549,16 @@ class Projects extends Service {
      *
      *
      * @param {string} projectId
-     * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    delete(projectId, password) {
+    */
+    delete(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "projectId"');
             }
-            if (typeof password === 'undefined') {
-                throw new AppwriteException('Missing required parameter: "password"');
-            }
             let path = '/projects/{projectId}'.replace('{projectId}', projectId);
             let payload = {};
-            if (typeof password !== 'undefined') {
-                payload['password'] = password;
-            }
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('delete', uri, {
                 'content-type': 'application/json',
@@ -5579,7 +5573,7 @@ class Projects extends Service {
      * @param {number} duration
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthDuration(projectId, duration) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5607,7 +5601,7 @@ class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthLimit(projectId, limit) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5635,7 +5629,7 @@ class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthSessionsLimit(projectId, limit) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5663,7 +5657,7 @@ class Projects extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthPasswordDictionary(projectId, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5691,7 +5685,7 @@ class Projects extends Service {
      * @param {number} limit
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthPasswordHistory(projectId, limit) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5720,7 +5714,7 @@ class Projects extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateAuthStatus(projectId, method, status) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5750,7 +5744,7 @@ class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDomains(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5772,7 +5766,7 @@ class Projects extends Service {
      * @param {string} domain
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDomain(projectId, domain) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5800,7 +5794,7 @@ class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDomain(projectId, domainId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5825,7 +5819,7 @@ class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDomain(projectId, domainId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5850,7 +5844,7 @@ class Projects extends Service {
      * @param {string} domainId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDomainVerification(projectId, domainId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5874,7 +5868,7 @@ class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listKeys(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5898,7 +5892,7 @@ class Projects extends Service {
      * @param {string} expire
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createKey(projectId, name, scopes, expire) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5935,7 +5929,7 @@ class Projects extends Service {
      * @param {string} keyId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getKey(projectId, keyId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -5963,7 +5957,7 @@ class Projects extends Service {
      * @param {string} expire
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateKey(projectId, keyId, name, scopes, expire) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6003,7 +5997,7 @@ class Projects extends Service {
      * @param {string} keyId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteKey(projectId, keyId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6031,7 +6025,7 @@ class Projects extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateOAuth2(projectId, provider, appId, secret, enabled) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6067,7 +6061,7 @@ class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listPlatforms(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6093,7 +6087,7 @@ class Projects extends Service {
      * @param {string} hostname
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPlatform(projectId, type, name, key, store, hostname) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6136,7 +6130,7 @@ class Projects extends Service {
      * @param {string} platformId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPlatform(projectId, platformId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6165,7 +6159,7 @@ class Projects extends Service {
      * @param {string} hostname
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePlatform(projectId, platformId, name, key, store, hostname) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6205,7 +6199,7 @@ class Projects extends Service {
      * @param {string} platformId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deletePlatform(projectId, platformId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6231,7 +6225,7 @@ class Projects extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateServiceStatus(projectId, service, status) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6258,6 +6252,342 @@ class Projects extends Service {
         });
     }
     /**
+     * Update all service status
+     *
+     *
+     * @param {string} projectId
+     * @param {boolean} status
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateServiceStatusAll(projectId, status) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof status === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "status"');
+            }
+            let path = '/projects/{projectId}/service/all'.replace('{projectId}', projectId);
+            let payload = {};
+            if (typeof status !== 'undefined') {
+                payload['status'] = status;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('patch', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Update SMTP configuration
+     *
+     *
+     * @param {string} projectId
+     * @param {boolean} enabled
+     * @param {string} sender
+     * @param {string} host
+     * @param {number} port
+     * @param {string} username
+     * @param {string} password
+     * @param {string} secure
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateSmtpConfiguration(projectId, enabled, sender, host, port, username, password, secure) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof enabled === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "enabled"');
+            }
+            if (typeof sender === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "sender"');
+            }
+            if (typeof host === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "host"');
+            }
+            if (typeof port === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "port"');
+            }
+            if (typeof username === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "username"');
+            }
+            if (typeof password === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "password"');
+            }
+            let path = '/projects/{projectId}/smtp'.replace('{projectId}', projectId);
+            let payload = {};
+            if (typeof enabled !== 'undefined') {
+                payload['enabled'] = enabled;
+            }
+            if (typeof sender !== 'undefined') {
+                payload['sender'] = sender;
+            }
+            if (typeof host !== 'undefined') {
+                payload['host'] = host;
+            }
+            if (typeof port !== 'undefined') {
+                payload['port'] = port;
+            }
+            if (typeof username !== 'undefined') {
+                payload['username'] = username;
+            }
+            if (typeof password !== 'undefined') {
+                payload['password'] = password;
+            }
+            if (typeof secure !== 'undefined') {
+                payload['secure'] = secure;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('patch', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Update Project Team
+     *
+     *
+     * @param {string} projectId
+     * @param {string} teamId
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateTeam(projectId, teamId) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof teamId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "teamId"');
+            }
+            let path = '/projects/{projectId}/team'.replace('{projectId}', projectId);
+            let payload = {};
+            if (typeof teamId !== 'undefined') {
+                payload['teamId'] = teamId;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('patch', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Get custom email template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getEmailTemplate(projectId, type, locale) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            let path = '/projects/{projectId}/templates/email/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Update custom email templates
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @param {string} senderName
+     * @param {string} senderEmail
+     * @param {string} subject
+     * @param {string} message
+     * @param {string} replyTo
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateEmailTemplate(projectId, type, locale, senderName, senderEmail, subject, message, replyTo) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            if (typeof senderName === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "senderName"');
+            }
+            if (typeof senderEmail === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "senderEmail"');
+            }
+            if (typeof subject === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "subject"');
+            }
+            if (typeof message === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "message"');
+            }
+            let path = '/projects/{projectId}/templates/email/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            if (typeof senderName !== 'undefined') {
+                payload['senderName'] = senderName;
+            }
+            if (typeof senderEmail !== 'undefined') {
+                payload['senderEmail'] = senderEmail;
+            }
+            if (typeof subject !== 'undefined') {
+                payload['subject'] = subject;
+            }
+            if (typeof message !== 'undefined') {
+                payload['message'] = message;
+            }
+            if (typeof replyTo !== 'undefined') {
+                payload['replyTo'] = replyTo;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('patch', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Reset custom email template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    deleteEmailTemplate(projectId, type, locale) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            let path = '/projects/{projectId}/templates/email/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('delete', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Get custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getSmsTemplate(projectId, type, locale) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            let path = '/projects/{projectId}/templates/sms/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Update custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @param {string} message
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateSmsTemplate(projectId, type, locale, message) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            if (typeof message === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "message"');
+            }
+            let path = '/projects/{projectId}/templates/sms/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            if (typeof message !== 'undefined') {
+                payload['message'] = message;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('patch', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Reset custom SMS template
+     *
+     *
+     * @param {string} projectId
+     * @param {string} type
+     * @param {string} locale
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    deleteSmsTemplate(projectId, type, locale) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof projectId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "projectId"');
+            }
+            if (typeof type === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "type"');
+            }
+            if (typeof locale === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "locale"');
+            }
+            let path = '/projects/{projectId}/templates/sms/{type}/{locale}'.replace('{projectId}', projectId).replace('{type}', type).replace('{locale}', locale);
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('delete', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
      * Get usage stats for a project
      *
      *
@@ -6265,7 +6595,7 @@ class Projects extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(projectId, range) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6289,7 +6619,7 @@ class Projects extends Service {
      * @param {string} projectId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listWebhooks(projectId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6316,7 +6646,7 @@ class Projects extends Service {
      * @param {string} httpPass
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createWebhook(projectId, name, events, url, security, httpUser, httpPass) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6368,7 +6698,7 @@ class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getWebhook(projectId, webhookId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6399,7 +6729,7 @@ class Projects extends Service {
      * @param {string} httpPass
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateWebhook(projectId, webhookId, name, events, url, security, httpUser, httpPass) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6454,7 +6784,7 @@ class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteWebhook(projectId, webhookId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6479,7 +6809,7 @@ class Projects extends Service {
      * @param {string} webhookId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateWebhookSignature(projectId, webhookId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof projectId === 'undefined') {
@@ -6512,7 +6842,7 @@ class Storage extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listBuckets(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/storage/buckets';
@@ -6546,7 +6876,7 @@ class Storage extends Service {
      * @param {boolean} antivirus
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBucket(bucketId, name, permissions, fileSecurity, enabled, maximumFileSize, allowedFileExtensions, compression, encryption, antivirus) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6602,7 +6932,7 @@ class Storage extends Service {
      * @param {string} bucketId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getBucket(bucketId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6633,7 +6963,7 @@ class Storage extends Service {
      * @param {boolean} antivirus
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateBucket(bucketId, name, permissions, fileSecurity, enabled, maximumFileSize, allowedFileExtensions, compression, encryption, antivirus) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6685,7 +7015,7 @@ class Storage extends Service {
      * @param {string} bucketId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteBucket(bucketId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6710,7 +7040,7 @@ class Storage extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listFiles(bucketId, queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6758,7 +7088,7 @@ class Storage extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createFile(bucketId, fileId, file, permissions, onProgress = (progress) => { }) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6842,7 +7172,7 @@ class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getFile(bucketId, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6867,11 +7197,12 @@ class Storage extends Service {
      *
      * @param {string} bucketId
      * @param {string} fileId
+     * @param {string} name
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    updateFile(bucketId, fileId, permissions) {
+    */
+    updateFile(bucketId, fileId, name, permissions) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "bucketId"');
@@ -6881,6 +7212,9 @@ class Storage extends Service {
             }
             let path = '/storage/buckets/{bucketId}/files/{fileId}'.replace('{bucketId}', bucketId).replace('{fileId}', fileId);
             let payload = {};
+            if (typeof name !== 'undefined') {
+                payload['name'] = name;
+            }
             if (typeof permissions !== 'undefined') {
                 payload['permissions'] = permissions;
             }
@@ -6900,7 +7234,7 @@ class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteFile(bucketId, fileId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -6920,7 +7254,7 @@ class Storage extends Service {
     /**
      * Get File for Download
      *
-     * Get a file content by its unique ID. The endpoint response returns with a
+     * Get a file content by its unique ID. The endpoint response return with a
      * 'Content-Disposition: attachment' header that tells the browser to start
      * downloading the file to user downloads directory.
      *
@@ -6928,7 +7262,7 @@ class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFileDownload(bucketId, fileId) {
         if (typeof bucketId === 'undefined') {
             throw new AppwriteException('Missing required parameter: "bucketId"');
@@ -6969,7 +7303,7 @@ class Storage extends Service {
      * @param {string} output
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFilePreview(bucketId, fileId, width, height, gravity, quality, borderWidth, borderColor, borderRadius, opacity, rotation, background, output) {
         if (typeof bucketId === 'undefined') {
             throw new AppwriteException('Missing required parameter: "bucketId"');
@@ -7030,7 +7364,7 @@ class Storage extends Service {
      * @param {string} fileId
      * @throws {AppwriteException}
      * @returns {URL}
-     */
+    */
     getFileView(bucketId, fileId) {
         if (typeof bucketId === 'undefined') {
             throw new AppwriteException('Missing required parameter: "bucketId"');
@@ -7054,7 +7388,7 @@ class Storage extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/storage/usage';
@@ -7076,7 +7410,7 @@ class Storage extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getBucketUsage(bucketId, range) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof bucketId === 'undefined') {
@@ -7109,7 +7443,7 @@ class Teams extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/teams';
@@ -7138,7 +7472,7 @@ class Teams extends Service {
      * @param {string[]} roles
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(teamId, name, roles) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7172,7 +7506,7 @@ class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(teamId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7195,7 +7529,7 @@ class Teams extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName(teamId, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7224,7 +7558,7 @@ class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(teamId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7247,7 +7581,7 @@ class Teams extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(teamId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7275,7 +7609,7 @@ class Teams extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listMemberships(teamId, queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7322,21 +7656,24 @@ class Teams extends Service {
      *
      * @param {string} teamId
      * @param {string[]} roles
+     * @param {string} url
      * @param {string} email
      * @param {string} userId
      * @param {string} phone
-     * @param {string} url
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    createMembership(teamId, roles, email, userId, phone, url, name) {
+    */
+    createMembership(teamId, roles, url, email, userId, phone, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "teamId"');
             }
             if (typeof roles === 'undefined') {
                 throw new AppwriteException('Missing required parameter: "roles"');
+            }
+            if (typeof url === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "url"');
             }
             let path = '/teams/{teamId}/memberships'.replace('{teamId}', teamId);
             let payload = {};
@@ -7374,7 +7711,7 @@ class Teams extends Service {
      * @param {string} membershipId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getMembership(teamId, membershipId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7403,7 +7740,7 @@ class Teams extends Service {
      * @param {string[]} roles
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMembershipRoles(teamId, membershipId, roles) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7437,7 +7774,7 @@ class Teams extends Service {
      * @param {string} membershipId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteMembership(teamId, membershipId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7471,7 +7808,7 @@ class Teams extends Service {
      * @param {string} secret
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateMembershipStatus(teamId, membershipId, userId, secret) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7510,7 +7847,7 @@ class Teams extends Service {
      * @param {string} teamId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs(teamId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7535,7 +7872,7 @@ class Teams extends Service {
      * @param {object} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs(teamId, prefs) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof teamId === 'undefined') {
@@ -7571,7 +7908,7 @@ class Users extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries, search) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/users';
@@ -7600,7 +7937,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create(userId, email, phone, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7643,7 +7980,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createArgon2User(userId, email, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7689,7 +8026,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBcryptUser(userId, email, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7735,7 +8072,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createMD5User(userId, email, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7781,7 +8118,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPHPassUser(userId, email, password, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7832,7 +8169,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createScryptUser(userId, email, password, passwordSalt, passwordCpu, passwordMemory, passwordParallel, passwordLength, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7911,7 +8248,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createScryptModifiedUser(userId, email, password, passwordSalt, passwordSaltSeparator, passwordSignerKey, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -7976,7 +8313,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createSHAUser(userId, email, password, passwordVersion, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8019,7 +8356,7 @@ class Users extends Service {
      * @param {string} provider
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range, provider) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/users/usage';
@@ -8044,7 +8381,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8070,7 +8407,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8093,7 +8430,7 @@ class Users extends Service {
      * @param {string} email
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmail(userId, email) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8114,6 +8451,40 @@ class Users extends Service {
         });
     }
     /**
+     * Update User Labels
+     *
+     * Update the user labels by its unique ID.
+     *
+     * Labels can be used to grant access to resources. While teams are a way for
+     * user's to share access to a resource, labels can be defined by the
+     * developer to grant access without an invitation. See the [Permissions
+     * docs](/docs/permissions) for more info.
+     *
+     * @param {string} userId
+     * @param {string[]} labels
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateLabels(userId, labels) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof userId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "userId"');
+            }
+            if (typeof labels === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "labels"');
+            }
+            let path = '/users/{userId}/labels'.replace('{userId}', userId);
+            let payload = {};
+            if (typeof labels !== 'undefined') {
+                payload['labels'] = labels;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('put', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
      * List User Logs
      *
      * Get the user activity logs list by its unique ID.
@@ -8122,7 +8493,7 @@ class Users extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(userId, queries) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8147,7 +8518,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listMemberships(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8170,7 +8541,7 @@ class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName(userId, name) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8199,7 +8570,7 @@ class Users extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePassword(userId, password) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8228,7 +8599,7 @@ class Users extends Service {
      * @param {string} number
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhone(userId, number) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8256,7 +8627,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8281,7 +8652,7 @@ class Users extends Service {
      * @param {object} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs(userId, prefs) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8309,7 +8680,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listSessions(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8331,7 +8702,7 @@ class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSessions(userId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8354,7 +8725,7 @@ class Users extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSession(userId, sessionId) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8381,7 +8752,7 @@ class Users extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStatus(userId, status) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8410,7 +8781,7 @@ class Users extends Service {
      * @param {boolean} emailVerification
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmailVerification(userId, emailVerification) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {
@@ -8439,7 +8810,7 @@ class Users extends Service {
      * @param {boolean} phoneVerification
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneVerification(userId, phoneVerification) {
         return __awaiter(this, void 0, void 0, function* () {
             if (typeof userId === 'undefined') {

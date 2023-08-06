@@ -13,7 +13,7 @@ export declare class Users extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list<Preferences extends Models.Preferences>(queries?: string[], search?: string): Promise<Models.UserList<Preferences>>;
     /**
      * Create User
@@ -27,7 +27,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     create<Preferences extends Models.Preferences>(userId: string, email?: string, phone?: string, password?: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with Argon2 Password
@@ -43,7 +43,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createArgon2User<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with Bcrypt Password
@@ -59,7 +59,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBcryptUser<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with MD5 Password
@@ -75,7 +75,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createMD5User<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with PHPass Password
@@ -91,7 +91,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createPHPassUser<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with Scrypt Password
@@ -112,7 +112,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createScryptUser<Preferences extends Models.Preferences>(userId: string, email: string, password: string, passwordSalt: string, passwordCpu: number, passwordMemory: number, passwordParallel: number, passwordLength: number, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with Scrypt Modified Password
@@ -131,7 +131,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createScryptModifiedUser<Preferences extends Models.Preferences>(userId: string, email: string, password: string, passwordSalt: string, passwordSaltSeparator: string, passwordSignerKey: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Create User with SHA Password
@@ -148,7 +148,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createSHAUser<Preferences extends Models.Preferences>(userId: string, email: string, password: string, passwordVersion?: string, name?: string): Promise<Models.User<Preferences>>;
     /**
      * Get usage stats for the users API
@@ -158,7 +158,7 @@ export declare class Users extends Service {
      * @param {string} provider
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range?: string, provider?: string): Promise<Models.UsageUsers>;
     /**
      * Get User
@@ -168,7 +168,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get<Preferences extends Models.Preferences>(userId: string): Promise<Models.User<Preferences>>;
     /**
      * Delete User
@@ -182,7 +182,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(userId: string): Promise<{}>;
     /**
      * Update Email
@@ -193,8 +193,24 @@ export declare class Users extends Service {
      * @param {string} email
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmail<Preferences extends Models.Preferences>(userId: string, email: string): Promise<Models.User<Preferences>>;
+    /**
+     * Update User Labels
+     *
+     * Update the user labels by its unique ID.
+     *
+     * Labels can be used to grant access to resources. While teams are a way for
+     * user's to share access to a resource, labels can be defined by the
+     * developer to grant access without an invitation. See the [Permissions
+     * docs](/docs/permissions) for more info.
+     *
+     * @param {string} userId
+     * @param {string[]} labels
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    updateLabels<Preferences extends Models.Preferences>(userId: string, labels: string[]): Promise<Models.User<Preferences>>;
     /**
      * List User Logs
      *
@@ -204,7 +220,7 @@ export declare class Users extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(userId: string, queries?: string[]): Promise<Models.LogList>;
     /**
      * List User Memberships
@@ -214,7 +230,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listMemberships(userId: string): Promise<Models.MembershipList>;
     /**
      * Update Name
@@ -225,7 +241,7 @@ export declare class Users extends Service {
      * @param {string} name
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateName<Preferences extends Models.Preferences>(userId: string, name: string): Promise<Models.User<Preferences>>;
     /**
      * Update Password
@@ -236,7 +252,7 @@ export declare class Users extends Service {
      * @param {string} password
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePassword<Preferences extends Models.Preferences>(userId: string, password: string): Promise<Models.User<Preferences>>;
     /**
      * Update Phone
@@ -247,7 +263,7 @@ export declare class Users extends Service {
      * @param {string} number
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhone<Preferences extends Models.Preferences>(userId: string, number: string): Promise<Models.User<Preferences>>;
     /**
      * Get User Preferences
@@ -257,7 +273,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getPrefs<Preferences extends Models.Preferences>(userId: string): Promise<Preferences>;
     /**
      * Update User Preferences
@@ -270,7 +286,7 @@ export declare class Users extends Service {
      * @param {object} prefs
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePrefs<Preferences extends Models.Preferences>(userId: string, prefs: object): Promise<Preferences>;
     /**
      * List User Sessions
@@ -280,7 +296,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listSessions(userId: string): Promise<Models.SessionList>;
     /**
      * Delete User Sessions
@@ -290,7 +306,7 @@ export declare class Users extends Service {
      * @param {string} userId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSessions(userId: string): Promise<{}>;
     /**
      * Delete User Session
@@ -301,7 +317,7 @@ export declare class Users extends Service {
      * @param {string} sessionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteSession(userId: string, sessionId: string): Promise<{}>;
     /**
      * Update User Status
@@ -313,7 +329,7 @@ export declare class Users extends Service {
      * @param {boolean} status
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStatus<Preferences extends Models.Preferences>(userId: string, status: boolean): Promise<Models.User<Preferences>>;
     /**
      * Update Email Verification
@@ -324,7 +340,7 @@ export declare class Users extends Service {
      * @param {boolean} emailVerification
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmailVerification<Preferences extends Models.Preferences>(userId: string, emailVerification: boolean): Promise<Models.User<Preferences>>;
     /**
      * Update Phone Verification
@@ -335,6 +351,6 @@ export declare class Users extends Service {
      * @param {boolean} phoneVerification
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updatePhoneVerification<Preferences extends Models.Preferences>(userId: string, phoneVerification: boolean): Promise<Models.User<Preferences>>;
 }

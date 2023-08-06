@@ -13,7 +13,7 @@ export declare class Databases extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     list(queries?: string[], search?: string): Promise<Models.DatabaseList>;
     /**
      * Create Database
@@ -23,10 +23,11 @@ export declare class Databases extends Service {
      *
      * @param {string} databaseId
      * @param {string} name
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    create(databaseId: string, name: string): Promise<Models.Database>;
+    */
+    create(databaseId: string, name: string, enabled?: boolean): Promise<Models.Database>;
     /**
      * Get usage stats for the database
      *
@@ -34,7 +35,7 @@ export declare class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getUsage(range?: string): Promise<Models.UsageDatabases>;
     /**
      * Get Database
@@ -45,7 +46,7 @@ export declare class Databases extends Service {
      * @param {string} databaseId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     get(databaseId: string): Promise<Models.Database>;
     /**
      * Update Database
@@ -54,10 +55,11 @@ export declare class Databases extends Service {
      *
      * @param {string} databaseId
      * @param {string} name
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    update(databaseId: string, name: string): Promise<Models.Database>;
+    */
+    update(databaseId: string, name: string, enabled?: boolean): Promise<Models.Database>;
     /**
      * Delete Database
      *
@@ -67,7 +69,7 @@ export declare class Databases extends Service {
      * @param {string} databaseId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     delete(databaseId: string): Promise<{}>;
     /**
      * List Collections
@@ -80,7 +82,7 @@ export declare class Databases extends Service {
      * @param {string} search
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCollections(databaseId: string, queries?: string[], search?: string): Promise<Models.CollectionList>;
     /**
      * Create Collection
@@ -95,10 +97,11 @@ export declare class Databases extends Service {
      * @param {string} name
      * @param {string[]} permissions
      * @param {boolean} documentSecurity
+     * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
-    createCollection(databaseId: string, collectionId: string, name: string, permissions?: string[], documentSecurity?: boolean): Promise<Models.Collection>;
+    */
+    createCollection(databaseId: string, collectionId: string, name: string, permissions?: string[], documentSecurity?: boolean, enabled?: boolean): Promise<Models.Collection>;
     /**
      * Get Collection
      *
@@ -109,7 +112,7 @@ export declare class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCollection(databaseId: string, collectionId: string): Promise<Models.Collection>;
     /**
      * Update Collection
@@ -124,7 +127,7 @@ export declare class Databases extends Service {
      * @param {boolean} enabled
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateCollection(databaseId: string, collectionId: string, name: string, permissions?: string[], documentSecurity?: boolean, enabled?: boolean): Promise<Models.Collection>;
     /**
      * Delete Collection
@@ -136,7 +139,7 @@ export declare class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteCollection(databaseId: string, collectionId: string): Promise<{}>;
     /**
      * List Attributes
@@ -146,7 +149,7 @@ export declare class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listAttributes(databaseId: string, collectionId: string): Promise<Models.AttributeList>;
     /**
      * Create Boolean Attribute
@@ -162,7 +165,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createBooleanAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: boolean, array?: boolean): Promise<Models.AttributeBoolean>;
     /**
      * Update Boolean Attribute
@@ -175,7 +178,7 @@ export declare class Databases extends Service {
      * @param {boolean} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateBooleanAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: boolean): Promise<Models.AttributeBoolean>;
     /**
      * Create DateTime Attribute
@@ -189,7 +192,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDatetimeAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeDatetime>;
     /**
      * Update DateTime Attribute
@@ -202,7 +205,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDatetimeAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string): Promise<Models.AttributeDatetime>;
     /**
      * Create Email Attribute
@@ -218,7 +221,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEmailAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeEmail>;
     /**
      * Update Email Attribute
@@ -234,7 +237,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEmailAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string): Promise<Models.AttributeEmail>;
     /**
      * Create Enum Attribute
@@ -249,7 +252,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createEnumAttribute(databaseId: string, collectionId: string, key: string, elements: string[], required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeEnum>;
     /**
      * Update Enum Attribute
@@ -266,7 +269,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateEnumAttribute(databaseId: string, collectionId: string, key: string, elements: string[], required: boolean, xdefault?: string): Promise<Models.AttributeEnum>;
     /**
      * Create Float Attribute
@@ -285,7 +288,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createFloatAttribute(databaseId: string, collectionId: string, key: string, required: boolean, min?: number, max?: number, xdefault?: number, array?: boolean): Promise<Models.AttributeFloat>;
     /**
      * Update Float Attribute
@@ -303,7 +306,7 @@ export declare class Databases extends Service {
      * @param {number} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateFloatAttribute(databaseId: string, collectionId: string, key: string, required: boolean, min: number, max: number, xdefault?: number): Promise<Models.AttributeFloat>;
     /**
      * Create Integer Attribute
@@ -322,7 +325,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIntegerAttribute(databaseId: string, collectionId: string, key: string, required: boolean, min?: number, max?: number, xdefault?: number, array?: boolean): Promise<Models.AttributeInteger>;
     /**
      * Update Integer Attribute
@@ -340,7 +343,7 @@ export declare class Databases extends Service {
      * @param {number} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateIntegerAttribute(databaseId: string, collectionId: string, key: string, required: boolean, min: number, max: number, xdefault?: number): Promise<Models.AttributeInteger>;
     /**
      * Create IP Address Attribute
@@ -356,7 +359,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIpAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeIp>;
     /**
      * Update IP Address Attribute
@@ -372,7 +375,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateIpAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string): Promise<Models.AttributeIp>;
     /**
      * Create Relationship Attribute
@@ -391,7 +394,7 @@ export declare class Databases extends Service {
      * @param {string} onDelete
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createRelationshipAttribute(databaseId: string, collectionId: string, relatedCollectionId: string, type: string, twoWay?: boolean, key?: string, twoWayKey?: string, onDelete?: string): Promise<Models.AttributeRelationship>;
     /**
      * Create String Attribute
@@ -408,7 +411,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createStringAttribute(databaseId: string, collectionId: string, key: string, size: number, required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeString>;
     /**
      * Update String Attribute
@@ -424,7 +427,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateStringAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string): Promise<Models.AttributeString>;
     /**
      * Create URL Attribute
@@ -440,7 +443,7 @@ export declare class Databases extends Service {
      * @param {boolean} array
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createUrlAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string, array?: boolean): Promise<Models.AttributeUrl>;
     /**
      * Update URL Attribute
@@ -456,7 +459,7 @@ export declare class Databases extends Service {
      * @param {string} xdefault
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateUrlAttribute(databaseId: string, collectionId: string, key: string, required: boolean, xdefault?: string): Promise<Models.AttributeUrl>;
     /**
      * Get Attribute
@@ -467,7 +470,7 @@ export declare class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getAttribute(databaseId: string, collectionId: string, key: string): Promise<{}>;
     /**
      * Delete Attribute
@@ -478,7 +481,7 @@ export declare class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteAttribute(databaseId: string, collectionId: string, key: string): Promise<{}>;
     /**
      * Update Relationship Attribute
@@ -493,7 +496,7 @@ export declare class Databases extends Service {
      * @param {string} onDelete
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateRelationshipAttribute(databaseId: string, collectionId: string, key: string, onDelete?: string): Promise<Models.AttributeRelationship>;
     /**
      * List Documents
@@ -506,7 +509,7 @@ export declare class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDocuments<Document extends Models.Document>(databaseId: string, collectionId: string, queries?: string[]): Promise<Models.DocumentList<Document>>;
     /**
      * Create Document
@@ -523,7 +526,7 @@ export declare class Databases extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createDocument<Document extends Models.Document>(databaseId: string, collectionId: string, documentId: string, data: Omit<Document, keyof Models.Document>, permissions?: string[]): Promise<Document>;
     /**
      * Get Document
@@ -537,7 +540,7 @@ export declare class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDocument<Document extends Models.Document>(databaseId: string, collectionId: string, documentId: string, queries?: string[]): Promise<Document>;
     /**
      * Update Document
@@ -552,7 +555,7 @@ export declare class Databases extends Service {
      * @param {string[]} permissions
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     updateDocument<Document extends Models.Document>(databaseId: string, collectionId: string, documentId: string, data?: Partial<Omit<Document, keyof Models.Document>>, permissions?: string[]): Promise<Document>;
     /**
      * Delete Document
@@ -564,7 +567,7 @@ export declare class Databases extends Service {
      * @param {string} documentId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteDocument(databaseId: string, collectionId: string, documentId: string): Promise<{}>;
     /**
      * List Document Logs
@@ -577,7 +580,7 @@ export declare class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listDocumentLogs(databaseId: string, collectionId: string, documentId: string, queries?: string[]): Promise<Models.LogList>;
     /**
      * List Indexes
@@ -587,7 +590,7 @@ export declare class Databases extends Service {
      * @param {string} collectionId
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listIndexes(databaseId: string, collectionId: string): Promise<Models.IndexList>;
     /**
      * Create Index
@@ -601,7 +604,7 @@ export declare class Databases extends Service {
      * @param {string[]} orders
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     createIndex(databaseId: string, collectionId: string, key: string, type: string, attributes: string[], orders?: string[]): Promise<Models.Index>;
     /**
      * Get Index
@@ -612,7 +615,7 @@ export declare class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getIndex(databaseId: string, collectionId: string, key: string): Promise<Models.Index>;
     /**
      * Delete Index
@@ -623,7 +626,7 @@ export declare class Databases extends Service {
      * @param {string} key
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     deleteIndex(databaseId: string, collectionId: string, key: string): Promise<{}>;
     /**
      * List Collection Logs
@@ -635,7 +638,7 @@ export declare class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listCollectionLogs(databaseId: string, collectionId: string, queries?: string[]): Promise<Models.LogList>;
     /**
      * Get usage stats for a collection
@@ -646,7 +649,7 @@ export declare class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getCollectionUsage(databaseId: string, collectionId: string, range?: string): Promise<Models.UsageCollection>;
     /**
      * List Database Logs
@@ -657,7 +660,7 @@ export declare class Databases extends Service {
      * @param {string[]} queries
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     listLogs(databaseId: string, queries?: string[]): Promise<Models.LogList>;
     /**
      * Get usage stats for the database
@@ -667,6 +670,6 @@ export declare class Databases extends Service {
      * @param {string} range
      * @throws {AppwriteException}
      * @returns {Promise}
-     */
+    */
     getDatabaseUsage(databaseId: string, range?: string): Promise<Models.UsageDatabase>;
 }
