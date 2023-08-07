@@ -178,7 +178,6 @@ export class Migrations extends Service {
         }, payload);
     }
 
-
     /**
      * Revoke Appwrite&#039;s authorization to access Firebase Projects
      *
