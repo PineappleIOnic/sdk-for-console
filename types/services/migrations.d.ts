@@ -48,16 +48,6 @@ export declare class Migrations extends Service {
     */
     createFirebaseMigration(resources: string[], serviceAccount: string): Promise<Models.Migration>;
     /**
-     * Authorize with firebase
-     *
-     *
-     * @param {string} project
-     * @param {string} redirect
-     * @throws {AppwriteException}
-     * @returns {void|string}
-    */
-    createFirebaseAuth(project: string, redirect?: string): void | URL;
-    /**
      * Revoke Appwrite&#039;s authorization to access Firebase Projects
      *
      *

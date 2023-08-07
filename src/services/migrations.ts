@@ -178,44 +178,6 @@ export class Migrations extends Service {
         }, payload);
     }
 
-    /**
-     * Authorize with firebase
-     *
-     *
-     * @param {string} project
-     * @param {string} redirect
-     * @throws {AppwriteException}
-     * @returns {void|string}
-    */
-    createFirebaseAuth(project: string, redirect?: string): void | URL {
-        if (typeof project === 'undefined') {
-            throw new AppwriteException('Missing required parameter: "project"');
-        }
-
-        let path = '/migrations/firebase/connect';
-        let payload: Payload = {};
-
-        if (typeof redirect !== 'undefined') {
-            payload['redirect'] = redirect;
-        }
-
-        if (typeof project !== 'undefined') {
-            payload['project'] = project;
-        }
-
-        const uri = new URL(this.client.config.endpoint + path);
-        payload['project'] = this.client.config.project;
-
-
-        for (const [key, value] of Object.entries(Service.flatten(payload))) {
-            uri.searchParams.append(key, value);
-        }
-        if (typeof window !== 'undefined' && window?.location) {
-            window.location.href = uri.toString();
-        } else {
-            return uri;
-        }
-    }
 
     /**
      * Revoke Appwrite&#039;s authorization to access Firebase Projects
