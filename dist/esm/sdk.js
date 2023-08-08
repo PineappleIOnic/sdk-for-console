@@ -545,6 +545,58 @@ class Account extends Service {
         });
     }
     /**
+     * Create account using an invite code
+     *
+     * Use this endpoint to allow a new user to register a new account in your
+     * project. After the user registration completes successfully, you can use
+     * the [/account/verfication](/docs/client/account#accountCreateVerification)
+     * route to start verifying the user email address. To allow the new user to
+     * login to their new account, you need to create a new [account
+     * session](/docs/client/account#accountCreateSession).
+     *
+     * @param {string} userId
+     * @param {string} email
+     * @param {string} password
+     * @param {string} name
+     * @param {string} code
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    createWithInviteCode(userId, email, password, name, code) {
+        return __awaiter(this, void 0, void 0, function* () {
+            if (typeof userId === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "userId"');
+            }
+            if (typeof email === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "email"');
+            }
+            if (typeof password === 'undefined') {
+                throw new AppwriteException('Missing required parameter: "password"');
+            }
+            let path = '/account/invite';
+            let payload = {};
+            if (typeof userId !== 'undefined') {
+                payload['userId'] = userId;
+            }
+            if (typeof email !== 'undefined') {
+                payload['email'] = email;
+            }
+            if (typeof password !== 'undefined') {
+                payload['password'] = password;
+            }
+            if (typeof name !== 'undefined') {
+                payload['name'] = name;
+            }
+            if (typeof code !== 'undefined') {
+                payload['code'] = code;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('post', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
      * Create JWT
      *
      * Use this endpoint to create a JSON Web Token. You can use the resulting JWT
@@ -4395,7 +4447,7 @@ class Health extends Service {
     /**
      * Get Cache
      *
-     * Check the Appwrite in-memory cache server is up and connection is
+     * Check the Appwrite in-memory cache servers are up and connection is
      * successful.
      *
      * @throws {AppwriteException}
@@ -4414,7 +4466,7 @@ class Health extends Service {
     /**
      * Get DB
      *
-     * Check the Appwrite database server is up and connection is successful.
+     * Check the Appwrite database servers are up and connection is successful.
      *
      * @throws {AppwriteException}
      * @returns {Promise}
@@ -4422,6 +4474,43 @@ class Health extends Service {
     getDB() {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/health/db';
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Get PubSub
+     *
+     * Check the Appwrite pub-sub servers are up and connection is successful.
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getPubSub() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let path = '/health/pubsub';
+            let payload = {};
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+    /**
+     * Get Queue
+     *
+     * Check the Appwrite queue messaging servers are up and connection is
+     * successful.
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getQueue() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let path = '/health/queue';
             let payload = {};
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('get', uri, {
@@ -5313,6 +5402,33 @@ class Migrations extends Service {
             let payload = {};
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('delete', uri, {
+                'content-type': 'application/json',
+            }, payload);
+        });
+    }
+}
+
+class Project extends Service {
+    constructor(client) {
+        super(client);
+    }
+    /**
+     * Get usage stats for a project
+     *
+     *
+     * @param {string} range
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getUsage(range) {
+        return __awaiter(this, void 0, void 0, function* () {
+            let path = '/project/usage';
+            let payload = {};
+            if (typeof range !== 'undefined') {
+                payload['range'] = range;
+            }
+            const uri = new URL(this.client.config.endpoint + path);
+            return yield this.client.call('get', uri, {
                 'content-type': 'application/json',
             }, payload);
         });
@@ -6555,31 +6671,6 @@ class Projects extends Service {
         });
     }
     /**
-     * Get usage stats for a project
-     *
-     *
-     * @param {string} projectId
-     * @param {string} range
-     * @throws {AppwriteException}
-     * @returns {Promise}
-    */
-    getUsage(projectId, range) {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (typeof projectId === 'undefined') {
-                throw new AppwriteException('Missing required parameter: "projectId"');
-            }
-            let path = '/projects/{projectId}/usage'.replace('{projectId}', projectId);
-            let payload = {};
-            if (typeof range !== 'undefined') {
-                payload['range'] = range;
-            }
-            const uri = new URL(this.client.config.endpoint + path);
-            return yield this.client.call('get', uri, {
-                'content-type': 'application/json',
-            }, payload);
-        });
-    }
-    /**
      * List Webhooks
      *
      *
@@ -7370,7 +7461,7 @@ class Storage extends Service {
         });
     }
     /**
-     * Get usage stats for a storage bucket
+     * Get usage stats for storage bucket
      *
      *
      * @param {string} bucketId
@@ -8320,19 +8411,15 @@ class Users extends Service {
      *
      *
      * @param {string} range
-     * @param {string} provider
      * @throws {AppwriteException}
      * @returns {Promise}
     */
-    getUsage(range, provider) {
+    getUsage(range) {
         return __awaiter(this, void 0, void 0, function* () {
             let path = '/users/usage';
             let payload = {};
             if (typeof range !== 'undefined') {
                 payload['range'] = range;
-            }
-            if (typeof provider !== 'undefined') {
-                payload['provider'] = provider;
             }
             const uri = new URL(this.client.config.endpoint + path);
             return yield this.client.call('get', uri, {
@@ -8856,5 +8943,5 @@ class ID {
     }
 }
 
-export { Account, AppwriteException, Avatars, Client, Console, Databases, Functions, Graphql, Health, ID, Locale, Migrations, Permission, Projects, Query, Role, Storage, Teams, Users };
+export { Account, AppwriteException, Avatars, Client, Console, Databases, Functions, Graphql, Health, ID, Locale, Migrations, Permission, Project, Projects, Query, Role, Storage, Teams, Users };
 //# sourceMappingURL=sdk.js.map

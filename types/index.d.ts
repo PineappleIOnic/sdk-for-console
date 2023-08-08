@@ -8,6 +8,7 @@ export { Graphql } from './services/graphql';
 export { Health } from './services/health';
 export { Locale } from './services/locale';
 export { Migrations } from './services/migrations';
+export { Project } from './services/project';
 export { Projects } from './services/projects';
 export { Storage } from './services/storage';
 export { Teams } from './services/teams';

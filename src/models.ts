@@ -1178,6 +1178,67 @@ export namespace Models {
         threads: number;
     }
     /**
+     * Account
+     */
+    export type Account<Preferences extends Models.Preferences> = {
+        /**
+         * User ID.
+         */
+        $id: string;
+        /**
+         * User creation date in ISO 8601 format.
+         */
+        $createdAt: string;
+        /**
+         * User update date in ISO 8601 format.
+         */
+        $updatedAt: string;
+        /**
+         * User name.
+         */
+        name: string;
+        /**
+         * User registration date in ISO 8601 format.
+         */
+        registration: string;
+        /**
+         * User status. Pass `true` for enabled and `false` for disabled.
+         */
+        status: boolean;
+        /**
+         * Labels for the user.
+         */
+        labels: string[];
+        /**
+         * Password update time in ISO 8601 format.
+         */
+        passwordUpdate: string;
+        /**
+         * User email address.
+         */
+        email: string;
+        /**
+         * User phone number in E.164 format.
+         */
+        phone: string;
+        /**
+         * Email verification status.
+         */
+        emailVerification: boolean;
+        /**
+         * Phone verification status.
+         */
+        phoneVerification: boolean;
+        /**
+         * User preferences as a key-value object
+         */
+        prefs: Preferences;
+        /**
+         * Most recent access date in ISO 8601 format. This attribute is only updated again after 24 hours.
+         */
+        accessedAt: string;
+    }
+    /**
      * Preferences
      */
     export type Preferences = {
@@ -1600,14 +1661,6 @@ export namespace Models {
          * Function execution schedult in CRON format.
          */
         schedule: string;
-        /**
-         * Function&#039;s next scheduled execution time in ISO 8601 format.
-         */
-        scheduleNext: string;
-        /**
-         * Function&#039;s previous scheduled execution time in ISO 8601 format.
-         */
-        schedulePrevious: string;
         /**
          * Function execution timeout in seconds.
          */
@@ -2295,6 +2348,10 @@ export namespace Models {
      */
     export type HealthStatus = {
         /**
+         * Name of the service.
+         */
+        name: string;
+        /**
          * Duration in milliseconds how long the health check took.
          */
         ping: number;
@@ -2344,63 +2401,15 @@ export namespace Models {
         /**
          * Aggregated stats for total number of documents.
          */
-        databasesCount: Metric[];
+        databasesTotal: Metric[];
+        /**
+         * Aggregated stats for total number of collections.
+         */
+        collectionsTotal: Metric[];
         /**
          * Aggregated stats for total number of documents.
          */
-        documentsCount: Metric[];
-        /**
-         * Aggregated stats for total number of collections.
-         */
-        collectionsCount: Metric[];
-        /**
-         * Aggregated stats for documents created.
-         */
-        databasesCreate: Metric[];
-        /**
-         * Aggregated stats for documents read.
-         */
-        databasesRead: Metric[];
-        /**
-         * Aggregated stats for documents updated.
-         */
-        databasesUpdate: Metric[];
-        /**
-         * Aggregated stats for total number of collections.
-         */
-        databasesDelete: Metric[];
-        /**
-         * Aggregated stats for documents created.
-         */
-        documentsCreate: Metric[];
-        /**
-         * Aggregated stats for documents read.
-         */
-        documentsRead: Metric[];
-        /**
-         * Aggregated stats for documents updated.
-         */
-        documentsUpdate: Metric[];
-        /**
-         * Aggregated stats for documents deleted.
-         */
-        documentsDelete: Metric[];
-        /**
-         * Aggregated stats for collections created.
-         */
-        collectionsCreate: Metric[];
-        /**
-         * Aggregated stats for collections read.
-         */
-        collectionsRead: Metric[];
-        /**
-         * Aggregated stats for collections updated.
-         */
-        collectionsUpdate: Metric[];
-        /**
-         * Aggregated stats for collections delete.
-         */
-        collectionsDelete: Metric[];
+        documentsTotal: Metric[];
     }
     /**
      * UsageDatabase
@@ -2411,45 +2420,13 @@ export namespace Models {
          */
         range: string;
         /**
-         * Aggregated stats for total number of documents.
-         */
-        documentsCount: Metric[];
-        /**
          * Aggregated stats for total number of collections.
          */
-        collectionsCount: Metric[];
+        collectionsTotal: Metric[];
         /**
-         * Aggregated stats for documents created.
+         * Aggregated stats for total number of documents.
          */
-        documentsCreate: Metric[];
-        /**
-         * Aggregated stats for documents read.
-         */
-        documentsRead: Metric[];
-        /**
-         * Aggregated stats for documents updated.
-         */
-        documentsUpdate: Metric[];
-        /**
-         * Aggregated stats for documents deleted.
-         */
-        documentsDelete: Metric[];
-        /**
-         * Aggregated stats for collections created.
-         */
-        collectionsCreate: Metric[];
-        /**
-         * Aggregated stats for collections read.
-         */
-        collectionsRead: Metric[];
-        /**
-         * Aggregated stats for collections updated.
-         */
-        collectionsUpdate: Metric[];
-        /**
-         * Aggregated stats for collections delete.
-         */
-        collectionsDelete: Metric[];
+        documentsTotal: Metric[];
     }
     /**
      * UsageCollection
@@ -2462,23 +2439,7 @@ export namespace Models {
         /**
          * Aggregated stats for total number of documents.
          */
-        documentsCount: Metric[];
-        /**
-         * Aggregated stats for documents created.
-         */
-        documentsCreate: Metric[];
-        /**
-         * Aggregated stats for documents read.
-         */
-        documentsRead: Metric[];
-        /**
-         * Aggregated stats for documents updated.
-         */
-        documentsUpdate: Metric[];
-        /**
-         * Aggregated stats for documents deleted.
-         */
-        documentsDelete: Metric[];
+        documentsTotal: Metric[];
     }
     /**
      * UsageUsers
@@ -2491,35 +2452,11 @@ export namespace Models {
         /**
          * Aggregated stats for total number of users.
          */
-        usersCount: Metric[];
-        /**
-         * Aggregated stats for users created.
-         */
-        usersCreate: Metric[];
-        /**
-         * Aggregated stats for users read.
-         */
-        usersRead: Metric[];
-        /**
-         * Aggregated stats for users updated.
-         */
-        usersUpdate: Metric[];
-        /**
-         * Aggregated stats for users deleted.
-         */
-        usersDelete: Metric[];
+        usersTotal: Metric[];
         /**
          * Aggregated stats for sessions created.
          */
-        sessionsCreate: Metric[];
-        /**
-         * Aggregated stats for sessions created for a provider ( email, anonymous or oauth2 ).
-         */
-        sessionsProviderCreate: Metric[];
-        /**
-         * Aggregated stats for sessions deleted.
-         */
-        sessionsDelete: Metric[];
+        sessionsTotal: Metric[];
     }
     /**
      * StorageUsage
@@ -2530,49 +2467,17 @@ export namespace Models {
          */
         range: string;
         /**
-         * Aggregated stats for the occupied storage size (in bytes).
+         * Aggregated stats for total number of buckets.
          */
-        storage: Metric[];
+        bucketsTotal: Metric[];
         /**
          * Aggregated stats for total number of files.
          */
-        filesCount: Metric[];
+        filesTotal: Metric[];
         /**
-         * Aggregated stats for total number of buckets.
+         * Aggregated stats for the occupied storage size (in bytes).
          */
-        bucketsCount: Metric[];
-        /**
-         * Aggregated stats for buckets created.
-         */
-        bucketsCreate: Metric[];
-        /**
-         * Aggregated stats for buckets read.
-         */
-        bucketsRead: Metric[];
-        /**
-         * Aggregated stats for buckets updated.
-         */
-        bucketsUpdate: Metric[];
-        /**
-         * Aggregated stats for buckets deleted.
-         */
-        bucketsDelete: Metric[];
-        /**
-         * Aggregated stats for files created.
-         */
-        filesCreate: Metric[];
-        /**
-         * Aggregated stats for files read.
-         */
-        filesRead: Metric[];
-        /**
-         * Aggregated stats for files updated.
-         */
-        filesUpdate: Metric[];
-        /**
-         * Aggregated stats for files deleted.
-         */
-        filesDelete: Metric[];
+        filesStorage: Metric[];
     }
     /**
      * UsageBuckets
@@ -2585,27 +2490,11 @@ export namespace Models {
         /**
          * Aggregated stats for total number of files in this bucket.
          */
-        filesCount: Metric[];
+        filesTotal: Metric[];
         /**
          * Aggregated stats for total storage of files in this bucket.
          */
         filesStorage: Metric[];
-        /**
-         * Aggregated stats for files created.
-         */
-        filesCreate: Metric[];
-        /**
-         * Aggregated stats for files read.
-         */
-        filesRead: Metric[];
-        /**
-         * Aggregated stats for files updated.
-         */
-        filesUpdate: Metric[];
-        /**
-         * Aggregated stats for files deleted.
-         */
-        filesDelete: Metric[];
     }
     /**
      * UsageFunctions
@@ -2616,37 +2505,37 @@ export namespace Models {
          */
         range: string;
         /**
-         * Aggregated stats for number of function executions.
+         * Aggregated stats for number of functions.
          */
-        executionsTotal: Metric[];
+        functionsTotal: Metric[];
         /**
-         * Aggregated stats for function execution failures.
+         * Aggregated stats for number of function deployments.
          */
-        executionsFailure: Metric[];
+        deploymentsTotal: Metric[];
         /**
-         * Aggregated stats for function execution successes.
+         * Aggregated stats for function deployments storage.
          */
-        executionsSuccess: Metric[];
-        /**
-         * Aggregated stats for function execution duration.
-         */
-        executionsTime: Metric[];
+        deploymentsStorage: Metric[];
         /**
          * Aggregated stats for number of function builds.
          */
         buildsTotal: Metric[];
         /**
-         * Aggregated stats for function build failures.
+         * Aggregated stats for builds  storage.
          */
-        buildsFailure: Metric[];
+        buildsStorage: Metric[];
         /**
-         * Aggregated stats for function build successes.
-         */
-        buildsSuccess: Metric[];
-        /**
-         * Aggregated stats for function build duration.
+         * Aggregated stats for function build compute.
          */
         buildsTime: Metric[];
+        /**
+         * Aggregated stats for number of function executions.
+         */
+        executionsTotal: Metric[];
+        /**
+         * Aggregated stats for function execution compute.
+         */
+        executionsTime: Metric[];
     }
     /**
      * UsageProject
@@ -2659,7 +2548,7 @@ export namespace Models {
         /**
          * Aggregated stats for number of requests.
          */
-        requests: Metric[];
+        requestsTotal: Metric[];
         /**
          * Aggregated stats for consumed bandwidth.
          */
@@ -2667,27 +2556,27 @@ export namespace Models {
         /**
          * Aggregated stats for function executions.
          */
-        executions: Metric[];
+        executionsTotal: Metric[];
         /**
          * Aggregated stats for number of documents.
          */
-        documents: Metric[];
+        documentsTotal: Metric[];
         /**
          * Aggregated stats for number of databases.
          */
-        databases: Metric[];
+        databasesTotal: Metric[];
         /**
          * Aggregated stats for number of users.
          */
-        users: Metric[];
+        usersTotal: Metric[];
         /**
          * Aggregated stats for the occupied storage size (in bytes).
          */
-        storage: Metric[];
+        filesStorage: Metric[];
         /**
          * Aggregated stats for number of buckets.
          */
-        buckets: Metric[];
+        bucketsTotal: Metric[];
     }
     /**
      * SmsTemplate

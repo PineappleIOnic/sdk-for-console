@@ -218,7 +218,7 @@ export declare class Storage extends Service {
     */
     getUsage(range?: string): Promise<Models.UsageStorage>;
     /**
-     * Get usage stats for a storage bucket
+     * Get usage stats for storage bucket
      *
      *
      * @param {string} bucketId

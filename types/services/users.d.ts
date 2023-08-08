@@ -155,11 +155,10 @@ export declare class Users extends Service {
      *
      *
      * @param {string} range
-     * @param {string} provider
      * @throws {AppwriteException}
      * @returns {Promise}
     */
-    getUsage(range?: string, provider?: string): Promise<Models.UsageUsers>;
+    getUsage(range?: string): Promise<Models.UsageUsers>;
     /**
      * Get User
      *

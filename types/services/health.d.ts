@@ -24,7 +24,7 @@ export declare class Health extends Service {
     /**
      * Get Cache
      *
-     * Check the Appwrite in-memory cache server is up and connection is
+     * Check the Appwrite in-memory cache servers are up and connection is
      * successful.
      *
      * @throws {AppwriteException}
@@ -34,12 +34,31 @@ export declare class Health extends Service {
     /**
      * Get DB
      *
-     * Check the Appwrite database server is up and connection is successful.
+     * Check the Appwrite database servers are up and connection is successful.
      *
      * @throws {AppwriteException}
      * @returns {Promise}
     */
     getDB(): Promise<Models.HealthStatus>;
+    /**
+     * Get PubSub
+     *
+     * Check the Appwrite pub-sub servers are up and connection is successful.
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getPubSub(): Promise<Models.HealthStatus>;
+    /**
+     * Get Queue
+     *
+     * Check the Appwrite queue messaging servers are up and connection is
+     * successful.
+     *
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    getQueue(): Promise<Models.HealthStatus>;
     /**
      * Get Certificates Queue
      *

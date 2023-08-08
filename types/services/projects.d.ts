@@ -425,16 +425,6 @@ export declare class Projects extends Service {
     */
     deleteSmsTemplate(projectId: string, type: string, locale: string): Promise<Models.SmsTemplate>;
     /**
-     * Get usage stats for a project
-     *
-     *
-     * @param {string} projectId
-     * @param {string} range
-     * @throws {AppwriteException}
-     * @returns {Promise}
-    */
-    getUsage(projectId: string, range?: string): Promise<Models.UsageProject>;
-    /**
      * List Webhooks
      *
      *

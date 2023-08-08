@@ -49,6 +49,25 @@ export declare class Account extends Service {
     */
     updateEmail<Preferences extends Models.Preferences>(email: string, password: string): Promise<Models.User<Preferences>>;
     /**
+     * Create account using an invite code
+     *
+     * Use this endpoint to allow a new user to register a new account in your
+     * project. After the user registration completes successfully, you can use
+     * the [/account/verfication](/docs/client/account#accountCreateVerification)
+     * route to start verifying the user email address. To allow the new user to
+     * login to their new account, you need to create a new [account
+     * session](/docs/client/account#accountCreateSession).
+     *
+     * @param {string} userId
+     * @param {string} email
+     * @param {string} password
+     * @param {string} name
+     * @param {string} code
+     * @throws {AppwriteException}
+     * @returns {Promise}
+    */
+    createWithInviteCode<Preferences extends Models.Preferences>(userId: string, email: string, password: string, name?: string, code?: string): Promise<Models.Account<Preferences>>;
+    /**
      * Create JWT
      *
      * Use this endpoint to create a JSON Web Token. You can use the resulting JWT
